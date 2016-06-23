@@ -150,7 +150,11 @@ Per chiedere aiuto e conoscere altri utenti e' possibile iscriversi con la propr
 
 Copyright © 2016 fondazione Dyne.org, Amsterdam
 
-Programma ideato, scritto e mantenuto da Denis Roio <jaromil@dyne.org>
+Programma ideato, scritto e mantenuto da [@jaromil](https://twitter.com/jaromil)
 
-Distribuito secondo la Eclipse Public License (come Clojure) in versione 1.0 o (a libera discrezione) qualsiasi versione successiva della licenza.
+Ringraziamenti in particolare a [Rich Hickey](https://twitter.com/richhickey) per Clojure, [Jony Hudson](http://j-star.org) per Gorilla e [Simon Belak](https://twitter.com/sbelak) per Huri, brillanti sviluppatori il cui lavoro non smette mai di ispirarmi e motivarmi. 
+
+FXC-Soldipubblici non sarebbe mai esistito senza la piu' ampia ricerca su nuove tecnologie per la democrazia digitale svolta in seno al progetto [D-CENT](http://dcentproject.eu).
+
+FXC-Soldipubblici e' distribuito secondo la Eclipse Public License (come Clojure) in versione 1.0 o (a libera discrezione) qualsiasi versione successiva della licenza.
 
