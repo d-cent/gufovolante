@@ -10,9 +10,8 @@
                  [gorilla-repl "0.3.6"]
                  [huri "0.5.0-SNAPSHOT"]
                  ]
-  :main ^:skip-aot fxc-soldipubblici.core
+  :main ^:skip-aot gorilla-repl.core
   :target-path "target/%s"
   :plugins [[lein-gorilla "0.3.6"]]
   :profiles {:uberjar {:aot :all}}
-  
-)
+  )

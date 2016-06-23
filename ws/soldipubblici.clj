@@ -34,7 +34,6 @@
             [clj-http.cookies :as cookies]
             [cheshire.core :refer :all]
             [clojure.string :as string]
-            [clojure.core.async :as async]
             [clojure.data.json :as json]
             [gorilla-repl.core :as gorilla])
   (:use     [clojure.java.shell]
