@@ -78,65 +78,36 @@ linguaggio ;^)
 
 ```clojure
 (ns fxc-soldipubblici.core
-  (:require [clj-http.client :as client]
-            [clj-http.cookies :as cookies]
-            [cheshire.core :refer :all]
-            [clojure.string :as string]
-            [clojure.core.async :as async]
-            [clojure.data.json :as json]
-            [gorilla-repl.core :as gorilla])
-  (:use     [clojure.java.shell]
-            [huri core plot etl])
-  (:import  [java.awt.image.BufferedImage]
-            [javax.imageio.ImageIO]
-            [java.io.ByteArrayInputStream]
-            [javax.swing.ImageIcon]))
-(def cs (cookies/cookie-store))
-(def df (binding [clj-http.core/*cookie-store* cs]
+  (:require
+   [clojure.string :as string]
+   [clojure.data.json :as json]
+   [clojure.contrib.humanize :refer :all]
+   [fxc-soldipubblici.core :refer :all :reload :true])
+  (:use [gorilla-repl core table latex html]
+        [huri core plot etl]
+        ))
 
+(table-view (cerca-enti "PESCARA")
+            :columns [:codice 'creazione 'scadenza "???"
+			          :nome "??" "??" 'popolazione :tipo])
 
+(def dati (raccogli-dati "PRO" "000016324" "Pescara"))
 
-
-  ;; -------------------------------------------
-  ;; riempire la richiesta e premere Shift+Invio
-  (let [comparto "PRO"
-        ente     "011135934"
-        chi      "comune+di+matera"
-        cosa     ""
-        ]
-    ;; ----------------------------
-
-
-
-
-
-  (client/get "http://soldipubblici.gov.it/it" {:cookie-store cs})
-  (-> (client/post "http://soldipubblici.gov.it/it/ricerca"
-               {:form-params {"codicecomparto" comparto
-                              "codiceente" ente
-                              "chi" chi
-                              "cosa" cosa }
-               	:cookie-store cs
-                :headers {"X-Requested-With" "XMLHttpRequest"}
-                :accept :json
-                :as :json})
-      :body
-      :data
-  ))))
+(bar-chart :desc
+           [:2016 :2015 :2014] {:flip? true :height 12}
+           (where {:2016 [> 10000000]}
+                  (analizza-dati dati)))
 ```
 
-Il codice iniziale riportato qui sopra quando eseguito contattera' il
-portale soldipubblici.gov.it importando il risultato della
-selezione. Al momento occorre ritrovare il codice ente a manina ma su
-facilitazioni ulteriori ci stiamo lavorando.
+Il codice iniziale riportato qui sopra usa `cerca-enti` per visualizzare una lista di enti che contengono la stringa "PESCARA", poi contatta il
+portale soldipubblici.gov.it importando tutte le voci di spesa.
+Di seguito usando i comandi `bar-chart` e `analizza-dati` e' possibile visualizzare un grafico ordinato delle voci di spesa maggiori.
 
 Per procedere ed eseguire ogni blocco di codice premere
 `shift+invio`. Tornando indietro e' posibile cambiare il codice e
 rieseguirlo.
 
-I quadri successivi offrono esempi di manipolazione dei dati fino ad
-arrivare ad un esempio di visualizzazione grafica su una tabella
-facilmente ricavabile con una sola linea di codice.
+I quadri offrono esempi di manipolazione dei dati. Questo approccio e' estremamente flessibile e permette anche di salvare lo storico delle manipolazioni avvenute sui dati, permettendone quindi una verifica.
 
 ![](doc/fxc-grafico.png)
 
