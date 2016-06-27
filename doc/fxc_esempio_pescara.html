@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<!-- saved from url=(0067)http://127.0.0.1:54498/worksheet.html?filename=ws/soldipubblici.clj -->
+<html id="document"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+    <link rel="shortcut icon" href="http://127.0.0.1:54498/favicon.ico">
+
+    <link href="./fxc_esempio_pescara_files/css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="./fxc_esempio_pescara_files/codemirror.css">
+    <link rel="stylesheet" href="./fxc_esempio_pescara_files/codemirror-hint.css">
+    <link rel="stylesheet" href="./fxc_esempio_pescara_files/worksheet.css">
+    <link rel="stylesheet" href="./fxc_esempio_pescara_files/gorilla.css">
+    <link rel="stylesheet" href="./fxc_esempio_pescara_files/output.css">
+
+    <script type="text/javascript" src="./fxc_esempio_pescara_files/MathJax.js"></script>
+    <script type="text/javascript" src="./fxc_esempio_pescara_files/marked.min.js"></script>
+    <script type="text/javascript" src="./fxc_esempio_pescara_files/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="./fxc_esempio_pescara_files/underscore.min.js"></script>
+    <script type="text/javascript" src="./fxc_esempio_pescara_files/knockout-3.0.0.min.js"></script>
+    <script type="text/javascript" src="./fxc_esempio_pescara_files/codemirror.js"></script>
+    <script type="text/javascript" src="./fxc_esempio_pescara_files/closebrackets.js"></script>
+    <script type="text/javascript" src="./fxc_esempio_pescara_files/matchbrackets.js"></script>
+    <script type="text/javascript" src="./fxc_esempio_pescara_files/runmode.js"></script>
+    <script type="text/javascript" src="./fxc_esempio_pescara_files/colorize.js"></script>
+    <script type="text/javascript" src="./fxc_esempio_pescara_files/show-hint.js"></script>
+    <script type="text/javascript" src="./fxc_esempio_pescara_files/clojure.js"></script>
+    <script type="text/javascript" src="./fxc_esempio_pescara_files/markdown.js"></script>
+    <script type="text/javascript" src="./fxc_esempio_pescara_files/xml.js"></script>
+    <script type="text/javascript" src="./fxc_esempio_pescara_files/d3.v3.min.js"></script>
+    <script type="text/javascript" src="./fxc_esempio_pescara_files/d3.geo.projection.min.js"></script>
+    <script type="text/javascript" src="./fxc_esempio_pescara_files/vega.1.3.3.min.js"></script>
+    <script type="text/javascript" src="./fxc_esempio_pescara_files/uuid.core.js"></script>
+    <script type="text/javascript" src="./fxc_esempio_pescara_files/mousetrap.min.js"></script>
+    <script type="text/javascript" src="./fxc_esempio_pescara_files/eventbus.js"></script>
+    <script type="text/javascript" src="./fxc_esempio_pescara_files/commandProcessor.js"></script>
+    <script type="text/javascript" src="./fxc_esempio_pescara_files/repl-ws.js"></script>
+    <script type="text/javascript" src="./fxc_esempio_pescara_files/utils.js"></script>
+    <script type="text/javascript" src="./fxc_esempio_pescara_files/worksheetParser.js"></script>
+    <script type="text/javascript" src="./fxc_esempio_pescara_files/codemirrorVM.js"></script>
+    <script type="text/javascript" src="./fxc_esempio_pescara_files/completions.js"></script>
+    <script type="text/javascript" src="./fxc_esempio_pescara_files/mathJaxViewer.js"></script>
+    <script type="text/javascript" src="./fxc_esempio_pescara_files/outputViewer.js"></script>
+    <script type="text/javascript" src="./fxc_esempio_pescara_files/renderer.js"></script>
+    <script type="text/javascript" src="./fxc_esempio_pescara_files/segment.js"></script>
+    <script type="text/javascript" src="./fxc_esempio_pescara_files/worksheet.js"></script>
+    <script type="text/javascript" src="./fxc_esempio_pescara_files/palette.js"></script>
+    <script type="text/javascript" src="./fxc_esempio_pescara_files/saveDialog.js"></script>
+    <script type="text/javascript" src="./fxc_esempio_pescara_files/codeDialog.js"></script>
+    <script type="text/javascript" src="./fxc_esempio_pescara_files/docViewer.js"></script>
+    <script type="text/javascript" src="./fxc_esempio_pescara_files/main.js"></script>
+
+    <title data-bind="text: title">fxc-soldipubblici : ws/soldipubblici.clj</title>
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style type="text/css">.MathJax_SVG_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax_SVG .MJX-monospace {font-family: monospace}
+.MathJax_SVG .MJX-sans-serif {font-family: sans-serif}
+#MathJax_SVG_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; padding: 3px 4px; z-index: 401; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.MathJax_SVG {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax_SVG * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.mjx-svg-href {fill: blue; stroke: blue}
+.MathJax_SVG_Processing {visibility: hidden; position: absolute; top: 0; left: 0; width: 0; height: 0; overflow: hidden; display: block!important}
+.MathJax_SVG_Processed {display: none!important}
+.MathJax_SVG_ExBox {display: block!important; overflow: hidden; width: 1px; height: 60ex; min-height: 0; max-height: none; padding: 0; border: 0; margin: 0}
+.MathJax_SVG .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+<body><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_SVG_Hidden"></div><svg><defs id="MathJax_SVG_glyphs"></defs></svg></div><div id="MathJax_Message" style="display: none;"></div>
+
+<!-- The page stub -->
+<div class="status" data-bind="visible: (status() !== &#39;&#39;)" style="display: none;"><h3 data-bind="html: status"></h3></div>
+<div class="menu-icon" data-bind="click: handleMenuClick">&#9776;</div>
+<div data-bind="template: {name: &#39;palette-template&#39;, data: palette}">
+    <div class="modal-overlay" data-bind="visible: shown, click: handleOverlayClick" style="display: none;"></div>
+    <div class="modal" data-bind="visible: shown" style="display: none;">
+        <h3 data-bind="text: caption">Choose a file to load:</h3>
+        <div class="modal-content">
+            <input type="text" data-bind="hasFocus: focused, value: filterText, valueUpdate: &#39;input&#39;, event: {keydown: handleKeyPress}">
+            <div class="palette-items">
+                <ul data-bind="foreach: items">
+                    <li data-bind="click: $parent.handleItemClick, attr: {id: (&#39;palette-item-&#39; + $index())}" id="palette-item-0">
+                        <div class="palette-item" data-bind="html: desc, css: {highlight: ($index() == $parent.highlight())}"><div class="command">ws/huri.clj</div></div>
+                        <!--<div class="command-shortcut" data-bind="text: kb"></div>-->
+                    </li>
+                
+                    <li data-bind="click: $parent.handleItemClick, attr: {id: (&#39;palette-item-&#39; + $index())}" id="palette-item-1">
+                        <div class="palette-item highlight" data-bind="html: desc, css: {highlight: ($index() == $parent.highlight())}"><div class="command">ws/soldipubblici.clj</div></div>
+                        <!--<div class="command-shortcut" data-bind="text: kb"></div>-->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div data-bind="template: {name: &#39;code-dialog-template&#39;, data: codeDialog}">
+    <div class="modal-overlay" data-bind="visible: shown, click: handleOverlayClick" style="display: none;"></div>
+    <div class="modal" data-bind="visible: shown" style="display: none;">
+        <h3 data-bind="text: caption"></h3>
+        <div class="modal-content">
+            <div class="message" data-bind="html: message"></div>
+            <div class="last-chance">
+            <textarea class="last-chance" data-bind="hasFocus: focused, value: contents, event: {keydown: handleKeyPress}"></textarea>
+            </div>
+            <div>
+                <div class="modal-button highlight" data-bind="text: okButtonText, click: handleOKClick"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div data-bind="template: {name: &#39;save-template&#39;, data: saveDialog}">
+    <div class="modal-overlay" data-bind="visible: shown, click: handleOverlayClick" style="display: none;"></div>
+    <div class="modal" data-bind="visible: shown" style="display: none;">
+        <h3>Filename (relative to project directory):</h3>
+        <div class="modal-content">
+            <input type="text" data-bind="hasFocus: focused, value: filename, valueUpdate: &#39;input&#39;, event: {keydown: handleKeyPress}">
+        <div><div class="modal-button" data-bind="click: handleCancelClick">Cancel</div>
+            <div class="modal-button highlight" data-bind="click: handleOKClick">OK</div>
+        </div>
+        </div>
+    </div>
+</div>
+<div data-bind="template: {name: &#39;doc-template&#39;, data: docViewer}">
+    <div class="doc-viewer" data-bind="visible: shown" style="top: 272.562px; left: 363.875px; display: none;">
+        <div class="doc-viewer-content">
+            <div data-bind="html: doc">fxc-soldipubblici.core/analizza-dati<br>([chiave])<br>  nil<br></div>
+        </div>
+    </div>
+</div>
+
+
+<div id="contents">
+    <div class="segment container-segment">
+        <div class="container-children">
+        <div data-bind="template: {name: &#39;segment-template&#39;, foreach: worksheet().segments()}">
+    <div data-bind="template: {name: renderTemplate}">
+    <div class="segment free" data-bind="css: {selected: active()}, attr: {id: id}, click: handleClick" id="159858b7-4805-41a1-86c1-0e1b437f0afa">
+        <div class="segment-main">
+            <div class="free-preview" data-bind="mathJaxViewer: renderedContent, visible: !markupVisible()" id="mathjax-viewer-64117d29-e80c-435e-978e-8549652ee9cd"><h1 id="fxc-soldipubblici">FXC-Soldipubblici</h1>
+<h2 id="terminale-interattivo-per-analisi-di-dati-da-soldipubblici-gov-it">Terminale interattivo per analisi di dati da soldipubblici.gov.it</h2>
+<p>Sviluppo in fase sperimentale, per maggiori informazioni la mailinglist pubblica e'</p>
+<p>Archivio: <a href="https://lists.dyne.org/lurker/list/soldipubblici.it.html">https://lists.dyne.org/lurker/list/soldipubblici.it.html</a></p>
+<p>Iscrizione: <a href="https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/soldipubblici">https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/soldipubblici</a></p>
+<p>Codice libero ed open source: <a href="https://github.com/dyne/fxc-soldipubblici">https://github.com/dyne/fxc-soldipubblici</a></p>
+<p>Questa ricerca e' legata al progetto D-CENT <a href="http://dcentproject.eu/">http://dcentproject.eu</a></p>
+<p>FXC sta per <a href="http://freecoin.ch/">http://freecoin.ch</a></p>
+<pre><code>  Copyright (c) Denis Roio. All rights reserved.
+  The use and distribution terms for this software are covered by the
+  Eclipse Public License 1.0 (http://opensource.org/licenses/eclipse-1.0.php)
+  which can be found in the file epl-v10.html at the root of this distribution.
+  By using this software in any fashion, you are agreeing to be bound by
+  the terms of this license.
+  You must not remove this notice, or any other, from this software.
+</code></pre></div>
+            <div class="free-markup" data-bind="visible: markupVisible" style="display: none;">
+                <textarea data-bind="codemirror: content" style="display: none;"></textarea><div class="CodeMirror cm-s-default CodeMirror-wrap"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 0px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; padding: 0px; width: 1000px; height: 1em; outline: none;" tabindex="0"></textarea></div><div class="CodeMirror-hscrollbar" style="left: 0px;"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-vscrollbar" style="display: block; bottom: 0px;"><div style="min-width: 1px; height: 231px;"></div></div><div class="CodeMirror-scrollbar-filler"></div><div class="CodeMirror-gutter-filler"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px;"><div style="position: relative;"><div class="CodeMirror-lines"><div style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"><pre><span style="padding-right: 0.1px;"><span class="cm-header cm-header-1"># FXC-Soldipubblici</span></span></pre></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors"><div class="CodeMirror-cursor" style="left: 0px; top: 0px; height: 0px;">&nbsp;</div></div><div class="CodeMirror-code"></div></div></div></div></div><div style="position: absolute; height: 30px; width: 1px;"></div><div class="CodeMirror-gutters" style="display: none;"></div></div></div>
+            </div>
+        </div>
+        <div class="segment-footer"></div>
+    </div>
+</div>
+
+    <div data-bind="template: {name: renderTemplate}">
+    <div class="segment code" data-bind="css: {selected: active(), running: runningIndicator}, attr: {id: id}" id="cbba5146-28d6-4432-ab8b-31b825d4ff4f">
+
+        <div class="segment-main">
+            <textarea class="codeTextArea mousetrap" data-bind="codemirror: content" style="display: none;"></textarea><div class="CodeMirror cm-s-default CodeMirror-wrap                       "><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 108px; left: 84px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; padding: 0px; width: 1000px; height: 1em; outline: none;" tabindex="0"></textarea></div><div class="CodeMirror-hscrollbar" style="left: 0px;"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-vscrollbar"><div style="min-width: 1px; height: 0px;"></div></div><div class="CodeMirror-scrollbar-filler"></div><div class="CodeMirror-gutter-filler"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; min-height: 125px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines"><div style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors" style="visibility: hidden;"><div class="CodeMirror-cursor" style="left: 84px; top: 104px; height: 13px;">&nbsp;</div></div><div class="CodeMirror-code  "><pre class=""><span style="padding-right: 0.1px;"><span class="cm-bracket">(</span><span class="cm-keyword">ns</span> fxc-soldipubblici.core</span></pre><pre class=""><span style="padding-right: 0.1px;">  <span class="cm-bracket">(</span><span class="cm-atom">:require</span></span></pre><pre class=""><span style="padding-right: 0.1px;"> &nbsp; <span class="cm-bracket">[</span>clojure.string <span class="cm-atom">:as</span> string<span class="cm-bracket">]</span></span></pre><pre class=""><span style="padding-right: 0.1px;"> &nbsp; <span class="cm-bracket">[</span>clojure.data.json <span class="cm-atom">:as</span> json<span class="cm-bracket">]</span></span></pre><pre class=""><span style="padding-right: 0.1px;"> &nbsp; <span class="cm-bracket">[</span>clojure.contrib.humanize <span class="cm-atom">:refer</span> <span class="cm-atom">:all</span><span class="cm-bracket">]</span></span></pre><pre class=""><span style="padding-right: 0.1px;"> &nbsp; <span class="cm-bracket">[</span>fxc-soldipubblici.core <span class="cm-atom">:refer</span> <span class="cm-atom">:all</span> <span class="cm-atom">:reload</span> <span class="cm-atom">:true</span><span class="cm-bracket">])</span></span></pre><pre class=""><span style="padding-right: 0.1px;">  <span class="cm-bracket">(</span><span class="cm-atom">:use</span> <span class="cm-bracket">[</span>gorilla-repl core table latex html<span class="cm-bracket">]</span></span></pre><pre class=""><span style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  <span class="cm-bracket">[</span>huri core plot etl<span class="cm-bracket">]</span></span></pre><pre class=""><span style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  <span class="cm-bracket">))</span></span></pre></div></div></div></div></div><div style="position: absolute; height: 30px; width: 1px; top: 125px;"></div><div class="CodeMirror-gutters" style="display: none; height: 125px;"></div></div></div>
+        </div>
+        <div class="error-text" data-bind="text: errorText, visible: errorText() !== &#39;&#39;" style="display: none;"></div>
+        <!-- ko if: stackTrace() !== null --><!-- /ko -->
+        <div class="console-text" data-bind="visible: consoleText() !== &#39;&#39;" style="display: none;">
+            <pre><code data-bind="html: consoleText"></code></pre>
+        </div>
+        <div class="output" data-bind="visible: (output() != &#39;&#39;), outputViewer: output, segmentID: id"><pre><span class="value" data-value="nil"><span class="clj-nil">nil</span></span></pre></div>
+        <div class="segment-footer"></div>
+    </div>
+</div>
+
+    <div data-bind="template: {name: renderTemplate}">
+    <div class="segment code" data-bind="css: {selected: active(), running: runningIndicator}, attr: {id: id}" id="32bb9941-dd0c-46e3-8f30-7149e5adba21">
+
+        <div class="segment-main">
+            <textarea class="codeTextArea mousetrap" data-bind="codemirror: content" style="display: none;"></textarea><div class="CodeMirror cm-s-default CodeMirror-wrap                                         "><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 4px; left: 260px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; padding: 0px; width: 1000px; height: 1em; outline: none;" tabindex="0"></textarea></div><div class="CodeMirror-hscrollbar" style="left: 0px;"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-vscrollbar"><div style="min-width: 1px; height: 0px;"></div></div><div class="CodeMirror-scrollbar-filler"></div><div class="CodeMirror-gutter-filler"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; min-height: 34px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines"><div style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre>x</pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors" style=""><div class="CodeMirror-cursor" style="left: 260px; top: 0px; height: 13px;">&nbsp;</div></div><div class="CodeMirror-code"><pre><span style="padding-right: 0.1px;"><span class="cm-bracket">(</span>table-view <span class="cm-bracket">(</span>cerca-enti <span class="cm-string">"PESCARA"</span><span class="cm-bracket">)</span></span></pre><pre><span style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <span class="cm-atom">:columns</span> <span class="cm-bracket">[</span><span class="cm-atom">:codice</span> <span class="cm-atom">'</span>creazione <span class="cm-atom">'</span>scadenza <span class="cm-string">"???"</span> <span class="cm-atom">:nome</span> <span class="cm-string">"??"</span> <span class="cm-string">"??"</span> <span class="cm-atom">'</span>popolazione <span class="cm-atom">:tipo</span><span class="cm-bracket">])</span></span></pre></div></div></div></div></div><div style="position: absolute; height: 30px; width: 1px; top: 34px;"></div><div class="CodeMirror-gutters" style="display: none; height: 34px;"></div></div></div>
+        </div>
+        <div class="error-text" data-bind="text: errorText, visible: errorText() !== &#39;&#39;" style="display: none;"></div>
+        <!-- ko if: stackTrace() !== null --><!-- /ko -->
+        <div class="console-text" data-bind="visible: consoleText() !== &#39;&#39;" style="display: none;">
+            <pre><code data-bind="html: consoleText"></code></pre>
+        </div>
+        <div class="output" data-bind="visible: (output() != &#39;&#39;), outputViewer: output, segmentID: id"><pre><span class="value" data-value="#gorilla_repl.table.TableView{:contents ([&quot;000016324&quot; &quot;2006-01-02&quot; &quot;9999-12-31&quot; &quot;00124600685&quot; &quot;COMUNE DI PESCARA&quot; &quot;028&quot; &quot;068&quot; &quot;00121325&quot; &quot;COMUNE&quot;] [&quot;000290622000128&quot; &quot;2008-01-02&quot; &quot;9999-12-31&quot; &quot;01397530682&quot; &quot;ASL DI PESCARA (GESTIONE LIQUIDATORIA EX ULSS PESCARA)&quot; &quot;028&quot; &quot;068&quot; &quot;&quot; &quot;GESTIONI&quot;] [&quot;000290622000131&quot; &quot;2008-01-02&quot; &quot;9999-12-31&quot; &quot;01397530682&quot; &quot;ASL DI PESCARA (GESTIONE STRALCIO 1980 E RETRO EX ULSS PESCARA)&quot; &quot;028&quot; &quot;068&quot; &quot;&quot; &quot;GESTIONI&quot;] [&quot;000290622000129&quot; &quot;2008-01-02&quot; &quot;9999-12-31&quot; &quot;01397530682&quot; &quot;ASL DI PESCARA (GESTIONE LIQUIDATORIA EX ULSS PENNE)&quot; &quot;028&quot; &quot;068&quot; &quot;&quot; &quot;GESTIONI&quot;] [&quot;000290622000130&quot; &quot;2008-01-02&quot; &quot;9999-12-31&quot; &quot;01397530682&quot; &quot;ASL DI PESCARA (GESTIONE LIQUIDATORIA EX ULSS POPOLI)&quot; &quot;028&quot; &quot;068&quot; &quot;&quot; &quot;GESTIONI&quot;] [&quot;000699222&quot; &quot;2012-01-01&quot; &quot;9999-12-31&quot; &quot;80000750689&quot; &quot;CAMERA DI COMMERCIO INDUSTRIA , ARTIGIANATO E AGRICOLTURA DI PESCARA&quot; &quot;028&quot; &quot;068&quot; &quot;&quot; &quot;CAM_COMMERCIO&quot;] [&quot;000290622000000&quot; &quot;2008-01-02&quot; &quot;9999-12-31&quot; &quot;01397530682&quot; &quot;AZIENDA SANITARIA LOCALE 3 PESCARA&quot; &quot;028&quot; &quot;068&quot; &quot;&quot; &quot;ASL&quot;] [&quot;020982537&quot; &quot;2007-01-01&quot; &quot;9999-12-31&quot; &quot;91068850683&quot; &quot;U.C. DELL&#39;AREA URBANA CHIETI-PESCARA - UNICA&quot; &quot;008&quot; &quot;069&quot; &quot;&quot; &quot;UNIONE_COMUNI&quot;] [&quot;012540507&quot; &quot;2006-01-02&quot; &quot;9999-12-31&quot; &quot;00212850689&quot; &quot;AMMINISTRAZIONE PROVINCIALE DI PESCARA&quot; &quot;028&quot; &quot;068&quot; &quot;&quot; &quot;PROVINCIA&quot;] [&quot;030825229&quot; &quot;9999-12-31&quot; &quot;9999-12-31&quot; &quot;02558590697&quot; &quot;CAMERA DI COMMERCIO INDUSTRIA ARTIGIANATO AGRICOLTURA CHIETI PESCARA&quot; &quot;022&quot; &quot;069&quot; &quot;&quot; &quot;CAM_COMMERCIO&quot;]), :opts (:columns [:codice creazione scadenza &quot;???&quot; :nome &quot;??&quot; &quot;??&quot; popolazione :tipo])}"><center><span class="value" data-value="[:codice creazione scadenza &quot;???&quot; :nome &quot;??&quot; &quot;??&quot; popolazione :tipo]"></span><span class="value" data-value="[&quot;000016324&quot; &quot;2006-01-02&quot; &quot;9999-12-31&quot; &quot;00124600685&quot; &quot;COMUNE DI PESCARA&quot; &quot;028&quot; &quot;068&quot; &quot;00121325&quot; &quot;COMUNE&quot;]"></span><span class="value" data-value="[&quot;000290622000128&quot; &quot;2008-01-02&quot; &quot;9999-12-31&quot; &quot;01397530682&quot; &quot;ASL DI PESCARA (GESTIONE LIQUIDATORIA EX ULSS PESCARA)&quot; &quot;028&quot; &quot;068&quot; &quot;&quot; &quot;GESTIONI&quot;]"></span><span class="value" data-value="[&quot;000290622000131&quot; &quot;2008-01-02&quot; &quot;9999-12-31&quot; &quot;01397530682&quot; &quot;ASL DI PESCARA (GESTIONE STRALCIO 1980 E RETRO EX ULSS PESCARA)&quot; &quot;028&quot; &quot;068&quot; &quot;&quot; &quot;GESTIONI&quot;]"></span><span class="value" data-value="[&quot;000290622000129&quot; &quot;2008-01-02&quot; &quot;9999-12-31&quot; &quot;01397530682&quot; &quot;ASL DI PESCARA (GESTIONE LIQUIDATORIA EX ULSS PENNE)&quot; &quot;028&quot; &quot;068&quot; &quot;&quot; &quot;GESTIONI&quot;]"></span><span class="value" data-value="[&quot;000290622000130&quot; &quot;2008-01-02&quot; &quot;9999-12-31&quot; &quot;01397530682&quot; &quot;ASL DI PESCARA (GESTIONE LIQUIDATORIA EX ULSS POPOLI)&quot; &quot;028&quot; &quot;068&quot; &quot;&quot; &quot;GESTIONI&quot;]"></span><span class="value" data-value="[&quot;000699222&quot; &quot;2012-01-01&quot; &quot;9999-12-31&quot; &quot;80000750689&quot; &quot;CAMERA DI COMMERCIO INDUSTRIA , ARTIGIANATO E AGRICOLTURA DI PESCARA&quot; &quot;028&quot; &quot;068&quot; &quot;&quot; &quot;CAM_COMMERCIO&quot;]"></span><span class="value" data-value="[&quot;000290622000000&quot; &quot;2008-01-02&quot; &quot;9999-12-31&quot; &quot;01397530682&quot; &quot;AZIENDA SANITARIA LOCALE 3 PESCARA&quot; &quot;028&quot; &quot;068&quot; &quot;&quot; &quot;ASL&quot;]"></span><span class="value" data-value="[&quot;020982537&quot; &quot;2007-01-01&quot; &quot;9999-12-31&quot; &quot;91068850683&quot; &quot;U.C. DELL&#39;AREA URBANA CHIETI-PESCARA - UNICA&quot; &quot;008&quot; &quot;069&quot; &quot;&quot; &quot;UNIONE_COMUNI&quot;]"></span><span class="value" data-value="[&quot;012540507&quot; &quot;2006-01-02&quot; &quot;9999-12-31&quot; &quot;00212850689&quot; &quot;AMMINISTRAZIONE PROVINCIALE DI PESCARA&quot; &quot;028&quot; &quot;068&quot; &quot;&quot; &quot;PROVINCIA&quot;]"></span><span class="value" data-value="[&quot;030825229&quot; &quot;9999-12-31&quot; &quot;9999-12-31&quot; &quot;02558590697&quot; &quot;CAMERA DI COMMERCIO INDUSTRIA ARTIGIANATO AGRICOLTURA CHIETI PESCARA&quot; &quot;022&quot; &quot;069&quot; &quot;&quot; &quot;CAM_COMMERCIO&quot;]"></span><table><tbody><tr><th><span class="value" data-value=":codice"><span class="clj-keyword">:codice</span></span></th><th><span class="value" data-value="creazione"><span class="clj-symbol">creazione</span></span></th><th><span class="value" data-value="scadenza"><span class="clj-symbol">scadenza</span></span></th><th><span class="value" data-value="&quot;???&quot;"><span class="clj-string">"???"</span></span></th><th><span class="value" data-value=":nome"><span class="clj-keyword">:nome</span></span></th><th><span class="value" data-value="&quot;??&quot;"><span class="clj-string">"??"</span></span></th><th><span class="value" data-value="&quot;??&quot;"><span class="clj-string">"??"</span></span></th><th><span class="value" data-value="popolazione"><span class="clj-symbol">popolazione</span></span></th><th><span class="value" data-value=":tipo"><span class="clj-keyword">:tipo</span></span></th></tr>
+<tr><td><span class="value" data-value="&quot;000016324&quot;"><span class="clj-string">"000016324"</span></span></td><td><span class="value" data-value="&quot;2006-01-02&quot;"><span class="clj-string">"2006-01-02"</span></span></td><td><span class="value" data-value="&quot;9999-12-31&quot;"><span class="clj-string">"9999-12-31"</span></span></td><td><span class="value" data-value="&quot;00124600685&quot;"><span class="clj-string">"00124600685"</span></span></td><td><span class="value" data-value="&quot;COMUNE DI PESCARA&quot;"><span class="clj-string">"COMUNE DI PESCARA"</span></span></td><td><span class="value" data-value="&quot;028&quot;"><span class="clj-string">"028"</span></span></td><td><span class="value" data-value="&quot;068&quot;"><span class="clj-string">"068"</span></span></td><td><span class="value" data-value="&quot;00121325&quot;"><span class="clj-string">"00121325"</span></span></td><td><span class="value" data-value="&quot;COMUNE&quot;"><span class="clj-string">"COMUNE"</span></span></td></tr>
+<tr><td><span class="value" data-value="&quot;000290622000128&quot;"><span class="clj-string">"000290622000128"</span></span></td><td><span class="value" data-value="&quot;2008-01-02&quot;"><span class="clj-string">"2008-01-02"</span></span></td><td><span class="value" data-value="&quot;9999-12-31&quot;"><span class="clj-string">"9999-12-31"</span></span></td><td><span class="value" data-value="&quot;01397530682&quot;"><span class="clj-string">"01397530682"</span></span></td><td><span class="value" data-value="&quot;ASL DI PESCARA (GESTIONE LIQUIDATORIA EX ULSS PESCARA)&quot;"><span class="clj-string">"ASL DI PESCARA (GESTIONE LIQUIDATORIA EX ULSS PESCARA)"</span></span></td><td><span class="value" data-value="&quot;028&quot;"><span class="clj-string">"028"</span></span></td><td><span class="value" data-value="&quot;068&quot;"><span class="clj-string">"068"</span></span></td><td><span class="value" data-value="&quot;&quot;"><span class="clj-string">""</span></span></td><td><span class="value" data-value="&quot;GESTIONI&quot;"><span class="clj-string">"GESTIONI"</span></span></td></tr>
+<tr><td><span class="value" data-value="&quot;000290622000131&quot;"><span class="clj-string">"000290622000131"</span></span></td><td><span class="value" data-value="&quot;2008-01-02&quot;"><span class="clj-string">"2008-01-02"</span></span></td><td><span class="value" data-value="&quot;9999-12-31&quot;"><span class="clj-string">"9999-12-31"</span></span></td><td><span class="value" data-value="&quot;01397530682&quot;"><span class="clj-string">"01397530682"</span></span></td><td><span class="value" data-value="&quot;ASL DI PESCARA (GESTIONE STRALCIO 1980 E RETRO EX ULSS PESCARA)&quot;"><span class="clj-string">"ASL DI PESCARA (GESTIONE STRALCIO 1980 E RETRO EX ULSS PESCARA)"</span></span></td><td><span class="value" data-value="&quot;028&quot;"><span class="clj-string">"028"</span></span></td><td><span class="value" data-value="&quot;068&quot;"><span class="clj-string">"068"</span></span></td><td><span class="value" data-value="&quot;&quot;"><span class="clj-string">""</span></span></td><td><span class="value" data-value="&quot;GESTIONI&quot;"><span class="clj-string">"GESTIONI"</span></span></td></tr>
+<tr><td><span class="value" data-value="&quot;000290622000129&quot;"><span class="clj-string">"000290622000129"</span></span></td><td><span class="value" data-value="&quot;2008-01-02&quot;"><span class="clj-string">"2008-01-02"</span></span></td><td><span class="value" data-value="&quot;9999-12-31&quot;"><span class="clj-string">"9999-12-31"</span></span></td><td><span class="value" data-value="&quot;01397530682&quot;"><span class="clj-string">"01397530682"</span></span></td><td><span class="value" data-value="&quot;ASL DI PESCARA (GESTIONE LIQUIDATORIA EX ULSS PENNE)&quot;"><span class="clj-string">"ASL DI PESCARA (GESTIONE LIQUIDATORIA EX ULSS PENNE)"</span></span></td><td><span class="value" data-value="&quot;028&quot;"><span class="clj-string">"028"</span></span></td><td><span class="value" data-value="&quot;068&quot;"><span class="clj-string">"068"</span></span></td><td><span class="value" data-value="&quot;&quot;"><span class="clj-string">""</span></span></td><td><span class="value" data-value="&quot;GESTIONI&quot;"><span class="clj-string">"GESTIONI"</span></span></td></tr>
+<tr><td><span class="value" data-value="&quot;000290622000130&quot;"><span class="clj-string">"000290622000130"</span></span></td><td><span class="value" data-value="&quot;2008-01-02&quot;"><span class="clj-string">"2008-01-02"</span></span></td><td><span class="value" data-value="&quot;9999-12-31&quot;"><span class="clj-string">"9999-12-31"</span></span></td><td><span class="value" data-value="&quot;01397530682&quot;"><span class="clj-string">"01397530682"</span></span></td><td><span class="value" data-value="&quot;ASL DI PESCARA (GESTIONE LIQUIDATORIA EX ULSS POPOLI)&quot;"><span class="clj-string">"ASL DI PESCARA (GESTIONE LIQUIDATORIA EX ULSS POPOLI)"</span></span></td><td><span class="value" data-value="&quot;028&quot;"><span class="clj-string">"028"</span></span></td><td><span class="value" data-value="&quot;068&quot;"><span class="clj-string">"068"</span></span></td><td><span class="value" data-value="&quot;&quot;"><span class="clj-string">""</span></span></td><td><span class="value" data-value="&quot;GESTIONI&quot;"><span class="clj-string">"GESTIONI"</span></span></td></tr>
+<tr><td><span class="value" data-value="&quot;000699222&quot;"><span class="clj-string">"000699222"</span></span></td><td><span class="value" data-value="&quot;2012-01-01&quot;"><span class="clj-string">"2012-01-01"</span></span></td><td><span class="value" data-value="&quot;9999-12-31&quot;"><span class="clj-string">"9999-12-31"</span></span></td><td><span class="value" data-value="&quot;80000750689&quot;"><span class="clj-string">"80000750689"</span></span></td><td><span class="value" data-value="&quot;CAMERA DI COMMERCIO INDUSTRIA , ARTIGIANATO E AGRICOLTURA DI PESCARA&quot;"><span class="clj-string">"CAMERA DI COMMERCIO INDUSTRIA , ARTIGIANATO E AGRICOLTURA DI PESCARA"</span></span></td><td><span class="value" data-value="&quot;028&quot;"><span class="clj-string">"028"</span></span></td><td><span class="value" data-value="&quot;068&quot;"><span class="clj-string">"068"</span></span></td><td><span class="value" data-value="&quot;&quot;"><span class="clj-string">""</span></span></td><td><span class="value" data-value="&quot;CAM_COMMERCIO&quot;"><span class="clj-string">"CAM_COMMERCIO"</span></span></td></tr>
+<tr><td><span class="value" data-value="&quot;000290622000000&quot;"><span class="clj-string">"000290622000000"</span></span></td><td><span class="value" data-value="&quot;2008-01-02&quot;"><span class="clj-string">"2008-01-02"</span></span></td><td><span class="value" data-value="&quot;9999-12-31&quot;"><span class="clj-string">"9999-12-31"</span></span></td><td><span class="value" data-value="&quot;01397530682&quot;"><span class="clj-string">"01397530682"</span></span></td><td><span class="value" data-value="&quot;AZIENDA SANITARIA LOCALE 3 PESCARA&quot;"><span class="clj-string">"AZIENDA SANITARIA LOCALE 3 PESCARA"</span></span></td><td><span class="value" data-value="&quot;028&quot;"><span class="clj-string">"028"</span></span></td><td><span class="value" data-value="&quot;068&quot;"><span class="clj-string">"068"</span></span></td><td><span class="value" data-value="&quot;&quot;"><span class="clj-string">""</span></span></td><td><span class="value" data-value="&quot;ASL&quot;"><span class="clj-string">"ASL"</span></span></td></tr>
+<tr><td><span class="value" data-value="&quot;020982537&quot;"><span class="clj-string">"020982537"</span></span></td><td><span class="value" data-value="&quot;2007-01-01&quot;"><span class="clj-string">"2007-01-01"</span></span></td><td><span class="value" data-value="&quot;9999-12-31&quot;"><span class="clj-string">"9999-12-31"</span></span></td><td><span class="value" data-value="&quot;91068850683&quot;"><span class="clj-string">"91068850683"</span></span></td><td><span class="value" data-value="&quot;U.C. DELL&#39;AREA URBANA CHIETI-PESCARA - UNICA&quot;"><span class="clj-string">"U.C. DELL'AREA URBANA CHIETI-PESCARA - UNICA"</span></span></td><td><span class="value" data-value="&quot;008&quot;"><span class="clj-string">"008"</span></span></td><td><span class="value" data-value="&quot;069&quot;"><span class="clj-string">"069"</span></span></td><td><span class="value" data-value="&quot;&quot;"><span class="clj-string">""</span></span></td><td><span class="value" data-value="&quot;UNIONE_COMUNI&quot;"><span class="clj-string">"UNIONE_COMUNI"</span></span></td></tr>
+<tr><td><span class="value" data-value="&quot;012540507&quot;"><span class="clj-string">"012540507"</span></span></td><td><span class="value" data-value="&quot;2006-01-02&quot;"><span class="clj-string">"2006-01-02"</span></span></td><td><span class="value" data-value="&quot;9999-12-31&quot;"><span class="clj-string">"9999-12-31"</span></span></td><td><span class="value" data-value="&quot;00212850689&quot;"><span class="clj-string">"00212850689"</span></span></td><td><span class="value" data-value="&quot;AMMINISTRAZIONE PROVINCIALE DI PESCARA&quot;"><span class="clj-string">"AMMINISTRAZIONE PROVINCIALE DI PESCARA"</span></span></td><td><span class="value" data-value="&quot;028&quot;"><span class="clj-string">"028"</span></span></td><td><span class="value" data-value="&quot;068&quot;"><span class="clj-string">"068"</span></span></td><td><span class="value" data-value="&quot;&quot;"><span class="clj-string">""</span></span></td><td><span class="value" data-value="&quot;PROVINCIA&quot;"><span class="clj-string">"PROVINCIA"</span></span></td></tr>
+<tr><td><span class="value" data-value="&quot;030825229&quot;"><span class="clj-string">"030825229"</span></span></td><td><span class="value" data-value="&quot;9999-12-31&quot;"><span class="clj-string">"9999-12-31"</span></span></td><td><span class="value" data-value="&quot;9999-12-31&quot;"><span class="clj-string">"9999-12-31"</span></span></td><td><span class="value" data-value="&quot;02558590697&quot;"><span class="clj-string">"02558590697"</span></span></td><td><span class="value" data-value="&quot;CAMERA DI COMMERCIO INDUSTRIA ARTIGIANATO AGRICOLTURA CHIETI PESCARA&quot;"><span class="clj-string">"CAMERA DI COMMERCIO INDUSTRIA ARTIGIANATO AGRICOLTURA CHIETI PESCARA"</span></span></td><td><span class="value" data-value="&quot;022&quot;"><span class="clj-string">"022"</span></span></td><td><span class="value" data-value="&quot;069&quot;"><span class="clj-string">"069"</span></span></td><td><span class="value" data-value="&quot;&quot;"><span class="clj-string">""</span></span></td><td><span class="value" data-value="&quot;CAM_COMMERCIO&quot;"><span class="clj-string">"CAM_COMMERCIO"</span></span></td></tr></tbody></table></center></span></pre></div>
+        <div class="segment-footer"></div>
+    </div>
+</div>
+
+    <div data-bind="template: {name: renderTemplate}">
+    <div class="segment code" data-bind="css: {selected: active(), running: runningIndicator}, attr: {id: id}" id="8ea4aac8-293d-432d-8640-717c1fe4ac4f">
+
+        <div class="segment-main">
+            <textarea class="codeTextArea mousetrap" data-bind="codemirror: content" style="display: none;"></textarea><div class="CodeMirror cm-s-default CodeMirror-wrap                                                                          "><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 4px; left: 436px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; padding: 0px; width: 1000px; height: 1em; outline: none;" tabindex="0"></textarea></div><div class="CodeMirror-hscrollbar" style="left: 0px;"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-vscrollbar"><div style="min-width: 1px; height: 0px;"></div></div><div class="CodeMirror-scrollbar-filler"></div><div class="CodeMirror-gutter-filler"></div><div class="CodeMirror-scroll" tabindex="-1" draggable="false"><div class="CodeMirror-sizer" style="margin-left: 0px; min-height: 21px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines"><div style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors"><div class="CodeMirror-cursor" style="left: 436px; top: 0px; height: 13px;">&nbsp;</div></div><div class="CodeMirror-code    "><pre class=""><span style="padding-right: 0.1px;"><span class="cm-bracket CodeMirror-matchingbracket">(</span><span class="cm-keyword">def</span> dati <span class="cm-bracket">(</span>raccogli-dati <span class="cm-string">"PRO"</span> <span class="cm-string">"000016324"</span> <span class="cm-string">"Pescara"</span><span class="cm-bracket">)</span><span class="cm-bracket CodeMirror-matchingbracket">)</span></span></pre></div></div></div></div></div><div style="position: absolute; height: 30px; width: 1px; top: 21px;"></div><div class="CodeMirror-gutters" style="display: none; height: 34px;"></div></div></div>
+        </div>
+        <div class="error-text" data-bind="text: errorText, visible: errorText() !== &#39;&#39;" style="display: none;"></div>
+        <!-- ko if: stackTrace() !== null --><!-- /ko -->
+        <div class="console-text" data-bind="visible: consoleText() !== &#39;&#39;" style="display: none;">
+            <pre><code data-bind="html: consoleText"></code></pre>
+        </div>
+        <div class="output" data-bind="visible: (output() != &#39;&#39;), outputViewer: output, segmentID: id"><pre><span class="value" data-value="#&#39;fxc-soldipubblici.core/dati"><span class="clj-var">#'fxc-soldipubblici.core/dati</span></span></pre></div>
+        <div class="segment-footer"></div>
+    </div>
+</div>
+
+    <div data-bind="template: {name: renderTemplate}">
+    <div class="segment code" data-bind="css: {selected: active(), running: runningIndicator}, attr: {id: id}" id="f56652cb-c115-4d28-8319-17b86a950f0b">
+
+        <div class="segment-main">
+            <textarea class="codeTextArea mousetrap" data-bind="codemirror: content" style="display: none;"></textarea><div class="CodeMirror cm-s-default CodeMirror-wrap                                                                                             "><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 4px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; padding: 0px; width: 1000px; height: 1em; outline: none;" tabindex="0"></textarea></div><div class="CodeMirror-hscrollbar" style="left: 0px;"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-vscrollbar"><div style="min-width: 1px; height: 0px;"></div></div><div class="CodeMirror-scrollbar-filler"></div><div class="CodeMirror-gutter-filler"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; min-height: 73px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines"><div style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors" style=""><div class="CodeMirror-cursor" style="left: 4px; top: 0px; height: 13px;">&nbsp;</div></div><div class="CodeMirror-code"><pre><span style="padding-right: 0.1px;"><span class="cm-bracket">(</span>bar-chart <span class="cm-atom">:desc</span></span></pre><pre><span style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-bracket">[</span><span class="cm-atom">:2016</span> <span class="cm-atom">:2015</span> <span class="cm-atom">:2014</span><span class="cm-bracket">]</span> <span class="cm-bracket">{</span><span class="cm-atom">:flip?</span> <span class="cm-atom">true</span> <span class="cm-atom">:height</span> <span class="cm-number">12</span><span class="cm-bracket">}</span></span></pre><pre class=""><span style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-bracket">(</span>where <span class="cm-bracket">{</span><span class="cm-atom">:2016</span> <span class="cm-bracket">[</span><span class="cm-builtin">&gt;</span> <span class="cm-number">10000000</span><span class="cm-bracket">]}</span></span></pre><pre><span style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <span class="cm-bracket">(</span>analizza-dati dati<span class="cm-bracket">)))</span></span></pre><pre class=""><span style="padding-right: 0.1px;"><span>&#8203;</span></span></pre></div></div></div></div></div><div style="position: absolute; height: 30px; width: 1px; top: 73px;"></div><div class="CodeMirror-gutters" style="display: none; height: 73px;"></div></div></div>
+        </div>
+        <div class="error-text" data-bind="text: errorText, visible: errorText() !== &#39;&#39;" style="display: none;"></div>
+        <!-- ko if: stackTrace() !== null --><!-- /ko -->
+        <div class="console-text" data-bind="visible: consoleText() !== &#39;&#39;" style="display: none;">
+            <pre><code data-bind="html: consoleText"></code></pre>
+        </div>
+        <div class="output" data-bind="visible: (output() != &#39;&#39;), outputViewer: output, segmentID: id"><pre><span class="value" data-value="#huri.plot.GGView{:plot-command [[:&lt;- :g [:data.frame {:desc [:c &quot;Altre spese per servizi&quot; &quot;Contratti di servizio per riscossione tributi&quot; &quot;Vie di comunicazione ed infrastrutture connesse&quot; &quot; Interessi passivi a Cassa depositi e prestiti - gestione CDP spa&quot; &quot;Acquisto di derrate alimentari&quot; &quot;Competenze fisse per il personale a tempo indeterminato&quot; &quot;Rimborso di BOC/BOP in euro&quot; &quot;Beni di valore culturale, storico, archeologico, ed artistico&quot; &quot;Altre spese per servizi per conto di terzi&quot; &quot;Altri contratti di servizio&quot; &quot;Ritenute previdenziali e assistenziali al personale&quot; &quot;Altri materiali di consumo&quot; &quot;Organizzazione manifestazioni e convegni&quot; &quot;IRAP&quot; &quot;Assicurazioni&quot; &quot;Straordinario al personale per consultazioni elettorali&quot; &quot;Altre competenze ed indennità accessorie per il personale a tempo indeterminato&quot; &quot;Contributi obbligatori per il personale&quot; &quot;Utenze e canoni per energia elettrica&quot; &quot;Noleggi&quot; &quot;Trasferimenti correnti a famiglie&quot; &quot;Anticipazione di fondi per il servizio economato&quot; &quot;Altri oneri  straordinari della gestione corrente&quot; &quot;Trasferimenti correnti a istituzioni sociali private&quot; &quot;INCARICHI PROFESSIONALI ESTERNI&quot; &quot;Impianti sportivi&quot; &quot;Trasferimenti in conto capitale ad altri&quot; &quot;Contratti di servizio per smaltimento rifiuti&quot; &quot;Altre ritenute al personale per conto di terzi&quot; &quot;Ritenute erariali&quot; &quot;Altre infrastrutture&quot; &quot;Servizi ausiliari e spese di pulizia&quot; &quot;Altri beni immobili&quot; &quot;ALTRI PAGAMENTI DA REGOLARIZZARE (pagamenti codificati dal tesoriere)&quot; &quot;Trasferimenti correnti ad altre imprese di pubblici servizi&quot; &quot;Competenze fisse ed accessorie per il personale a tempo determinato&quot; &quot;Fabbricati civili ad uso abitativo, commerciale e istituzionale&quot; &quot;Trasferimenti correnti a Stato&quot; &quot;Opere per la sistemazione del suolo&quot; &quot;Utenze e canoni per telefonia e reti di trasmissione&quot; &quot;Buoni pasto e mensa per il personale&quot; &quot;Spese per gli organi istituzionali dell&#39;ente - Indennità&quot; &quot;Manutenzione ordinaria e riparazioni di immobili&quot; &quot;Trasferimenti correnti ad altri&quot; &quot;Terreni&quot; &quot;Rimborso mutui e prestiti ad enti del settore pubblico&quot; &quot;Altre spese per servizi&quot; &quot;Contratti di servizio per riscossione tributi&quot; &quot;Vie di comunicazione ed infrastrutture connesse&quot; &quot; Interessi passivi a Cassa depositi e prestiti - gestione CDP spa&quot; &quot;Acquisto di derrate alimentari&quot; &quot;Competenze fisse per il personale a tempo indeterminato&quot; &quot;Rimborso di BOC/BOP in euro&quot; &quot;Beni di valore culturale, storico, archeologico, ed artistico&quot; &quot;Altre spese per servizi per conto di terzi&quot; &quot;Altri contratti di servizio&quot; &quot;Ritenute previdenziali e assistenziali al personale&quot; &quot;Altri materiali di consumo&quot; &quot;Organizzazione manifestazioni e convegni&quot; &quot;IRAP&quot; &quot;Assicurazioni&quot; &quot;Straordinario al personale per consultazioni elettorali&quot; &quot;Altre competenze ed indennità accessorie per il personale a tempo indeterminato&quot; &quot;Contributi obbligatori per il personale&quot; &quot;Utenze e canoni per energia elettrica&quot; &quot;Noleggi&quot; &quot;Trasferimenti correnti a famiglie&quot; &quot;Anticipazione di fondi per il servizio economato&quot; &quot;Altri oneri  straordinari della gestione corrente&quot; &quot;Trasferimenti correnti a istituzioni sociali private&quot; &quot;INCARICHI PROFESSIONALI ESTERNI&quot; &quot;Impianti sportivi&quot; &quot;Trasferimenti in conto capitale ad altri&quot; &quot;Contratti di servizio per smaltimento rifiuti&quot; &quot;Altre ritenute al personale per conto di terzi&quot; &quot;Ritenute erariali&quot; &quot;Altre infrastrutture&quot; &quot;Servizi ausiliari e spese di pulizia&quot; &quot;Altri beni immobili&quot; &quot;ALTRI PAGAMENTI DA REGOLARIZZARE (pagamenti codificati dal tesoriere)&quot; &quot;Trasferimenti correnti ad altre imprese di pubblici servizi&quot; &quot;Competenze fisse ed accessorie per il personale a tempo determinato&quot; &quot;Fabbricati civili ad uso abitativo, commerciale e istituzionale&quot; &quot;Trasferimenti correnti a Stato&quot; &quot;Opere per la sistemazione del suolo&quot; &quot;Utenze e canoni per telefonia e reti di trasmissione&quot; &quot;Buoni pasto e mensa per il personale&quot; &quot;Spese per gli organi istituzionali dell&#39;ente - Indennità&quot; &quot;Manutenzione ordinaria e riparazioni di immobili&quot; &quot;Trasferimenti correnti ad altri&quot; &quot;Terreni&quot; &quot;Rimborso mutui e prestiti ad enti del settore pubblico&quot; &quot;Altre spese per servizi&quot; &quot;Contratti di servizio per riscossione tributi&quot; &quot;Vie di comunicazione ed infrastrutture connesse&quot; &quot; Interessi passivi a Cassa depositi e prestiti - gestione CDP spa&quot; &quot;Acquisto di derrate alimentari&quot; &quot;Competenze fisse per il personale a tempo indeterminato&quot; &quot;Rimborso di BOC/BOP in euro&quot; &quot;Beni di valore culturale, storico, archeologico, ed artistico&quot; &quot;Altre spese per servizi per conto di terzi&quot; &quot;Altri contratti di servizio&quot; &quot;Ritenute previdenziali e assistenziali al personale&quot; &quot;Altri materiali di consumo&quot; &quot;Organizzazione manifestazioni e convegni&quot; &quot;IRAP&quot; &quot;Assicurazioni&quot; &quot;Straordinario al personale per consultazioni elettorali&quot; &quot;Altre competenze ed indennità accessorie per il personale a tempo indeterminato&quot; &quot;Contributi obbligatori per il personale&quot; &quot;Utenze e canoni per energia elettrica&quot; &quot;Noleggi&quot; &quot;Trasferimenti correnti a famiglie&quot; &quot;Anticipazione di fondi per il servizio economato&quot; &quot;Altri oneri  straordinari della gestione corrente&quot; &quot;Trasferimenti correnti a istituzioni sociali private&quot; &quot;INCARICHI PROFESSIONALI ESTERNI&quot; &quot;Impianti sportivi&quot; &quot;Trasferimenti in conto capitale ad altri&quot; &quot;Contratti di servizio per smaltimento rifiuti&quot; &quot;Altre ritenute al personale per conto di terzi&quot; &quot;Ritenute erariali&quot; &quot;Altre infrastrutture&quot; &quot;Servizi ausiliari e spese di pulizia&quot; &quot;Altri beni immobili&quot; &quot;ALTRI PAGAMENTI DA REGOLARIZZARE (pagamenti codificati dal tesoriere)&quot; &quot;Trasferimenti correnti ad altre imprese di pubblici servizi&quot; &quot;Competenze fisse ed accessorie per il personale a tempo determinato&quot; &quot;Fabbricati civili ad uso abitativo, commerciale e istituzionale&quot; &quot;Trasferimenti correnti a Stato&quot; &quot;Opere per la sistemazione del suolo&quot; &quot;Utenze e canoni per telefonia e reti di trasmissione&quot; &quot;Buoni pasto e mensa per il personale&quot; &quot;Spese per gli organi istituzionali dell&#39;ente - Indennità&quot; &quot;Manutenzione ordinaria e riparazioni di immobili&quot; &quot;Trasferimenti correnti ad altri&quot; &quot;Terreni&quot; &quot;Rimborso mutui e prestiti ad enti del settore pubblico&quot;], :y__auto [:c 54655981 71153036 40253850 204825464 40363766 754530030 171234162 14772782 159805058 200941668 120952206 10140225 25960227 82738744 164957873 17656980 77481097 315663966 36221236 10217723 79474835 13829137 79875254 11833333 33061056 58194225 24465492 486989326 46633888 212305573 37227879 24789093 254381939 205111245 190420105 14677868 59796895 18069406 611380601 14973722 21038139 57959378 20680625 43087013 32694885 131810067 899673405 14616714 37118803 650789234 89161929 1934910498 315122924 47925899 504879416 758578909 224102882 51379169 143784105 153631480 192896425 0 122607098 604404288 334939893 11010738 107870001 10329137 157186176 19975072 31309250 88048122 7219296 2736517399 111364004 360395756 137674677 59230716 88339207 0 380137408 39199081 170193648 0 1230830669 21180322 34620130 109811593 154752059 242341522 18934 97197388 685949314 104789912 106411076 681847352 86687817 1970816577 303777642 18185188 68296357 481515543 246673644 48815616 39710301 164576767 178345335 21852019 202107327 632984100 361534317 28193121 58497625 20659137 159420979 34684454 22285500 44150900 1298596 3508527935 97444108 434784321 83900040 115004320 83604155 0 469681736 48292337 166886461 0 1142818984 56133279 43610674 112489770 105601093 164202087 7326348 27937270], :series__auto [:c &quot;2016&quot; &quot;2016&quot; &quot;2016&quot; &quot;2016&quot; &quot;2016&quot; &quot;2016&quot; &quot;2016&quot; &quot;2016&quot; &quot;2016&quot; &quot;2016&quot; &quot;2016&quot; &quot;2016&quot; &quot;2016&quot; &quot;2016&quot; &quot;2016&quot; &quot;2016&quot; &quot;2016&quot; &quot;2016&quot; &quot;2016&quot; &quot;2016&quot; &quot;2016&quot; &quot;2016&quot; &quot;2016&quot; &quot;2016&quot; &quot;2016&quot; &quot;2016&quot; &quot;2016&quot; &quot;2016&quot; &quot;2016&quot; &quot;2016&quot; &quot;2016&quot; &quot;2016&quot; &quot;2016&quot; &quot;2016&quot; &quot;2016&quot; &quot;2016&quot; &quot;2016&quot; &quot;2016&quot; &quot;2016&quot; &quot;2016&quot; &quot;2016&quot; &quot;2016&quot; &quot;2016&quot; &quot;2016&quot; &quot;2016&quot; &quot;2016&quot; &quot;2015&quot; &quot;2015&quot; &quot;2015&quot; &quot;2015&quot; &quot;2015&quot; &quot;2015&quot; &quot;2015&quot; &quot;2015&quot; &quot;2015&quot; &quot;2015&quot; &quot;2015&quot; &quot;2015&quot; &quot;2015&quot; &quot;2015&quot; &quot;2015&quot; &quot;2015&quot; &quot;2015&quot; &quot;2015&quot; &quot;2015&quot; &quot;2015&quot; &quot;2015&quot; &quot;2015&quot; &quot;2015&quot; &quot;2015&quot; &quot;2015&quot; &quot;2015&quot; &quot;2015&quot; &quot;2015&quot; &quot;2015&quot; &quot;2015&quot; &quot;2015&quot; &quot;2015&quot; &quot;2015&quot; &quot;2015&quot; &quot;2015&quot; &quot;2015&quot; &quot;2015&quot; &quot;2015&quot; &quot;2015&quot; &quot;2015&quot; &quot;2015&quot; &quot;2015&quot; &quot;2015&quot; &quot;2015&quot; &quot;2015&quot; &quot;2015&quot; &quot;2014&quot; &quot;2014&quot; &quot;2014&quot; &quot;2014&quot; &quot;2014&quot; &quot;2014&quot; &quot;2014&quot; &quot;2014&quot; &quot;2014&quot; &quot;2014&quot; &quot;2014&quot; &quot;2014&quot; &quot;2014&quot; &quot;2014&quot; &quot;2014&quot; &quot;2014&quot; &quot;2014&quot; &quot;2014&quot; &quot;2014&quot; &quot;2014&quot; &quot;2014&quot; &quot;2014&quot; &quot;2014&quot; &quot;2014&quot; &quot;2014&quot; &quot;2014&quot; &quot;2014&quot; &quot;2014&quot; &quot;2014&quot; &quot;2014&quot; &quot;2014&quot; &quot;2014&quot; &quot;2014&quot; &quot;2014&quot; &quot;2014&quot; &quot;2014&quot; &quot;2014&quot; &quot;2014&quot; &quot;2014&quot; &quot;2014&quot; &quot;2014&quot; &quot;2014&quot; &quot;2014&quot; &quot;2014&quot; &quot;2014&quot; &quot;2014&quot;]}]] [[:library :ggplot2] [:library :scales] [:library :grid] [:library :RColorBrewer] [:library :ggrepel] [:&lt;- :palette [:brewer.pal &quot;Greys&quot; {:n 9}]] {:color.background :palette[2]} {:color.grid.major :palette[3]} {:color.axis.text :palette[6]} {:color.axis.title :palette[7]} {:color.title :palette[9]}] [:+ [:+ [:+ [:+ [:+ [:ggplot :g [:aes {:x [:reorder :desc :y__auto], :y :y__auto, :fill :series__auto}]] [:geom_bar {:stat &quot;identity&quot;, :position &quot;dodge&quot;}]] [:coord_flip]] [:scale_y_continuous {:labels :comma}]] [:+ [:+ [:+ [:+ [:+ [:+ [:+ [:+ [:+ [:+ [:+ [:+ [:+ [:+ [:+ [:+ [:theme_bw {:base_size 9}] [:theme {:panel.background [:element_rect {:fill :color.background, :color :color.background}]}]] [:theme {:plot.background [:element_rect {:fill :color.background, :color :color.background}]}]] [:theme {:panel.border [:element_rect {:color :color.background}]}]] [:theme {:panel.grid.major [:element_line {:color :color.grid.major, :size 0.25}]}]] [:theme {:panel.grid.minor [:element_blank]}]] [:theme {:axis.ticks [:element_blank]}]] [:theme {:legend.background [:element_rect {:fill :color.background}]}]] [:theme {:legend.key [:element_rect {:fill :color.background, :color :color.background}]}]] [:theme {:legend.text [:element_text {:size 7, :color :color.axis.title}]}]] [:theme {:legend.title [:element_blank]}]] [:theme {:plot.title [:element_text {:size 10, :color :color.title, :vjust 1.25}]}]] [:theme {:axis.text.x [:element_text {:size 7, :color :color.axis.text}]}]] [:theme {:axis.text.y [:element_text {:size 7, :color :color.axis.text}]}]] [:theme {:axis.title.x [:element_text {:size 8, :color :color.axis.title, :vjust 0}]}]] [:theme {:axis.title.y [:element_text {:size 8, :color :color.axis.title, :vjust 1.25}]}]] [:theme {:plot.margin [:unit [:c 0.35 0.2 0.3 0.35] &quot;cm&quot;]}]]] [:labs {:y &quot;&quot;, :title &quot;&quot;, :x &quot;desc&quot;}]]], :options {:width 9, :height 12}}"><!--?xml version='1.0' encoding='UTF-8'?-->
+<svg viewBox="0 0 648.00 864.00" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<style type="text/css">
+
+    line, polyline, path, rect, circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  
+</style>
+</defs>
+<rect style="stroke: none; fill: #FFFFFF;" height="100%" width="100%"></rect>
+<rect style="stroke-width: 1.07; stroke: #F0F0F0; fill: #F0F0F0;" height="864.00" width="648.00" y="0.00" x="0.00"></rect>
+<defs>
+<clippath id="68e7a150-c08b-4fae-ad06-ea0b89bd5b3b">
+<rect height="807.86" width="214.79" y="24.47" x="361.83"></rect>
+</clippath>
+</defs>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: #F0F0F0; fill: #F0F0F0;" height="807.86" width="214.79" y="24.47" x="361.83"></rect>
+<polyline clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 0.53; stroke: #D9D9D9; stroke-linecap: butt;" points="361.83,821.84 576.62,821.84 "></polyline>
+<polyline clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 0.53; stroke: #D9D9D9; stroke-linecap: butt;" points="361.83,804.35 576.62,804.35 "></polyline>
+<polyline clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 0.53; stroke: #D9D9D9; stroke-linecap: butt;" points="361.83,786.87 576.62,786.87 "></polyline>
+<polyline clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 0.53; stroke: #D9D9D9; stroke-linecap: butt;" points="361.83,769.38 576.62,769.38 "></polyline>
+<polyline clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 0.53; stroke: #D9D9D9; stroke-linecap: butt;" points="361.83,751.89 576.62,751.89 "></polyline>
+<polyline clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 0.53; stroke: #D9D9D9; stroke-linecap: butt;" points="361.83,734.41 576.62,734.41 "></polyline>
+<polyline clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 0.53; stroke: #D9D9D9; stroke-linecap: butt;" points="361.83,716.92 576.62,716.92 "></polyline>
+<polyline clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 0.53; stroke: #D9D9D9; stroke-linecap: butt;" points="361.83,699.44 576.62,699.44 "></polyline>
+<polyline clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 0.53; stroke: #D9D9D9; stroke-linecap: butt;" points="361.83,681.95 576.62,681.95 "></polyline>
+<polyline clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 0.53; stroke: #D9D9D9; stroke-linecap: butt;" points="361.83,664.46 576.62,664.46 "></polyline>
+<polyline clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 0.53; stroke: #D9D9D9; stroke-linecap: butt;" points="361.83,646.98 576.62,646.98 "></polyline>
+<polyline clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 0.53; stroke: #D9D9D9; stroke-linecap: butt;" points="361.83,629.49 576.62,629.49 "></polyline>
+<polyline clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 0.53; stroke: #D9D9D9; stroke-linecap: butt;" points="361.83,612.00 576.62,612.00 "></polyline>
+<polyline clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 0.53; stroke: #D9D9D9; stroke-linecap: butt;" points="361.83,594.52 576.62,594.52 "></polyline>
+<polyline clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 0.53; stroke: #D9D9D9; stroke-linecap: butt;" points="361.83,577.03 576.62,577.03 "></polyline>
+<polyline clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 0.53; stroke: #D9D9D9; stroke-linecap: butt;" points="361.83,559.55 576.62,559.55 "></polyline>
+<polyline clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 0.53; stroke: #D9D9D9; stroke-linecap: butt;" points="361.83,542.06 576.62,542.06 "></polyline>
+<polyline clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 0.53; stroke: #D9D9D9; stroke-linecap: butt;" points="361.83,524.57 576.62,524.57 "></polyline>
+<polyline clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 0.53; stroke: #D9D9D9; stroke-linecap: butt;" points="361.83,507.09 576.62,507.09 "></polyline>
+<polyline clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 0.53; stroke: #D9D9D9; stroke-linecap: butt;" points="361.83,489.60 576.62,489.60 "></polyline>
+<polyline clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 0.53; stroke: #D9D9D9; stroke-linecap: butt;" points="361.83,472.12 576.62,472.12 "></polyline>
+<polyline clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 0.53; stroke: #D9D9D9; stroke-linecap: butt;" points="361.83,454.63 576.62,454.63 "></polyline>
+<polyline clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 0.53; stroke: #D9D9D9; stroke-linecap: butt;" points="361.83,437.14 576.62,437.14 "></polyline>
+<polyline clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 0.53; stroke: #D9D9D9; stroke-linecap: butt;" points="361.83,419.66 576.62,419.66 "></polyline>
+<polyline clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 0.53; stroke: #D9D9D9; stroke-linecap: butt;" points="361.83,402.17 576.62,402.17 "></polyline>
+<polyline clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 0.53; stroke: #D9D9D9; stroke-linecap: butt;" points="361.83,384.68 576.62,384.68 "></polyline>
+<polyline clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 0.53; stroke: #D9D9D9; stroke-linecap: butt;" points="361.83,367.20 576.62,367.20 "></polyline>
+<polyline clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 0.53; stroke: #D9D9D9; stroke-linecap: butt;" points="361.83,349.71 576.62,349.71 "></polyline>
+<polyline clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 0.53; stroke: #D9D9D9; stroke-linecap: butt;" points="361.83,332.23 576.62,332.23 "></polyline>
+<polyline clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 0.53; stroke: #D9D9D9; stroke-linecap: butt;" points="361.83,314.74 576.62,314.74 "></polyline>
+<polyline clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 0.53; stroke: #D9D9D9; stroke-linecap: butt;" points="361.83,297.25 576.62,297.25 "></polyline>
+<polyline clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 0.53; stroke: #D9D9D9; stroke-linecap: butt;" points="361.83,279.77 576.62,279.77 "></polyline>
+<polyline clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 0.53; stroke: #D9D9D9; stroke-linecap: butt;" points="361.83,262.28 576.62,262.28 "></polyline>
+<polyline clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 0.53; stroke: #D9D9D9; stroke-linecap: butt;" points="361.83,244.79 576.62,244.79 "></polyline>
+<polyline clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 0.53; stroke: #D9D9D9; stroke-linecap: butt;" points="361.83,227.31 576.62,227.31 "></polyline>
+<polyline clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 0.53; stroke: #D9D9D9; stroke-linecap: butt;" points="361.83,209.82 576.62,209.82 "></polyline>
+<polyline clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 0.53; stroke: #D9D9D9; stroke-linecap: butt;" points="361.83,192.34 576.62,192.34 "></polyline>
+<polyline clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 0.53; stroke: #D9D9D9; stroke-linecap: butt;" points="361.83,174.85 576.62,174.85 "></polyline>
+<polyline clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 0.53; stroke: #D9D9D9; stroke-linecap: butt;" points="361.83,157.36 576.62,157.36 "></polyline>
+<polyline clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 0.53; stroke: #D9D9D9; stroke-linecap: butt;" points="361.83,139.88 576.62,139.88 "></polyline>
+<polyline clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 0.53; stroke: #D9D9D9; stroke-linecap: butt;" points="361.83,122.39 576.62,122.39 "></polyline>
+<polyline clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 0.53; stroke: #D9D9D9; stroke-linecap: butt;" points="361.83,104.90 576.62,104.90 "></polyline>
+<polyline clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 0.53; stroke: #D9D9D9; stroke-linecap: butt;" points="361.83,87.42 576.62,87.42 "></polyline>
+<polyline clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 0.53; stroke: #D9D9D9; stroke-linecap: butt;" points="361.83,69.93 576.62,69.93 "></polyline>
+<polyline clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 0.53; stroke: #D9D9D9; stroke-linecap: butt;" points="361.83,52.45 576.62,52.45 "></polyline>
+<polyline clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 0.53; stroke: #D9D9D9; stroke-linecap: butt;" points="361.83,34.96 576.62,34.96 "></polyline>
+<polyline clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 0.53; stroke: #D9D9D9; stroke-linecap: butt;" points="371.59,832.33 371.59,24.47 "></polyline>
+<polyline clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 0.53; stroke: #D9D9D9; stroke-linecap: butt;" points="427.24,832.33 427.24,24.47 "></polyline>
+<polyline clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 0.53; stroke: #D9D9D9; stroke-linecap: butt;" points="482.90,832.33 482.90,24.47 "></polyline>
+<polyline clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 0.53; stroke: #D9D9D9; stroke-linecap: butt;" points="538.55,832.33 538.55,24.47 "></polyline>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #619CFF;" height="5.25" width="1.01" y="813.97" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #00BA38;" height="5.25" width="0.00" y="819.22" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #F8766D;" height="5.25" width="0.00" y="824.46" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #619CFF;" height="5.25" width="1.36" y="796.48" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #00BA38;" height="5.25" width="0.40" y="801.73" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #F8766D;" height="5.25" width="0.07" y="806.98" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #619CFF;" height="5.25" width="0.98" y="779.00" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #00BA38;" height="5.25" width="0.00" y="784.24" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #F8766D;" height="5.25" width="1.22" y="789.49" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #619CFF;" height="5.25" width="1.82" y="761.51" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #00BA38;" height="5.25" width="0.00" y="766.76" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #F8766D;" height="5.25" width="0.41" y="772.00" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #619CFF;" height="5.25" width="0.77" y="744.03" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #00BA38;" height="5.25" width="0.57" y="749.27" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #F8766D;" height="5.25" width="1.15" y="754.52" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #619CFF;" height="5.25" width="0.57" y="726.54" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #00BA38;" height="5.25" width="0.61" y="731.79" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #F8766D;" height="5.25" width="1.57" y="737.03" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #619CFF;" height="5.25" width="0.66" y="709.05" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #00BA38;" height="5.25" width="1.11" y="714.30" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #F8766D;" height="5.25" width="1.93" y="719.55" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #619CFF;" height="5.25" width="0.82" y="691.57" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #00BA38;" height="5.25" width="2.67" y="696.81" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #F8766D;" height="5.25" width="1.01" y="702.06" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #619CFF;" height="5.25" width="1.84" y="674.08" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #00BA38;" height="5.25" width="1.74" y="679.33" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #F8766D;" height="5.25" width="1.24" y="684.57" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #619CFF;" height="5.25" width="0.83" y="656.59" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #00BA38;" height="5.25" width="1.18" y="661.84" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #F8766D;" height="5.25" width="3.12" y="667.09" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #619CFF;" height="5.25" width="1.17" y="639.11" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #00BA38;" height="5.25" width="1.93" y="644.35" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #F8766D;" height="5.25" width="2.43" y="649.60" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #619CFF;" height="5.25" width="0.82" y="621.62" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #00BA38;" height="5.25" width="2.18" y="626.87" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #F8766D;" height="5.25" width="2.69" y="632.11" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #619CFF;" height="5.25" width="0.56" y="604.14" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #00BA38;" height="5.25" width="2.86" y="609.38" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #F8766D;" height="5.25" width="2.72" y="614.63" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #619CFF;" height="5.25" width="2.24" y="586.65" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #00BA38;" height="5.25" width="2.07" y="591.90" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #F8766D;" height="5.25" width="5.92" y="597.14" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #619CFF;" height="5.25" width="3.24" y="569.16" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #00BA38;" height="5.25" width="4.90" y="574.41" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #F8766D;" height="5.25" width="2.46" y="579.66" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #619CFF;" height="5.25" width="3.96" y="551.68" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #00BA38;" height="5.25" width="0.81" y="556.92" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #F8766D;" height="5.25" width="5.83" y="562.17" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #619CFF;" height="5.25" width="1.38" y="534.19" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #00BA38;" height="5.25" width="3.30" y="539.44" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #F8766D;" height="5.25" width="6.40" y="544.68" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #619CFF;" height="5.25" width="11.42" y="516.70" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #00BA38;" height="5.25" width="0.00" y="521.95" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #F8766D;" height="5.25" width="0.00" y="527.20" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #619CFF;" height="5.25" width="1.44" y="499.22" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #00BA38;" height="5.25" width="8.00" y="504.46" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #F8766D;" height="5.25" width="2.21" y="509.71" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #619CFF;" height="5.25" width="2.25" y="481.73" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #00BA38;" height="5.25" width="4.96" y="486.98" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #F8766D;" height="5.25" width="4.82" y="492.22" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #619CFF;" height="5.25" width="4.42" y="464.25" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #00BA38;" height="5.25" width="6.00" y="469.49" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #F8766D;" height="5.25" width="3.26" y="474.74" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #619CFF;" height="5.25" width="2.60" y="446.76" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #00BA38;" height="5.25" width="6.20" y="452.01" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #F8766D;" height="5.25" width="5.42" y="457.25" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #619CFF;" height="5.25" width="7.34" y="429.27" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #00BA38;" height="5.25" width="5.41" y="434.52" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #F8766D;" height="5.25" width="1.55" y="439.77" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #619CFF;" height="5.25" width="2.07" y="411.79" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #00BA38;" height="5.25" width="7.66" y="417.03" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #F8766D;" height="5.25" width="4.67" y="422.28" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #619CFF;" height="5.25" width="3.23" y="394.30" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #00BA38;" height="5.25" width="6.11" y="399.55" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #F8766D;" height="5.25" width="6.26" y="404.79" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #619CFF;" height="5.25" width="1.15" y="376.82" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #00BA38;" height="5.25" width="8.61" y="382.06" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #F8766D;" height="5.25" width="5.88" y="387.31" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #619CFF;" height="5.25" width="4.45" y="359.33" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #00BA38;" height="5.25" width="8.75" y="364.57" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #F8766D;" height="5.25" width="8.87" y="369.82" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #619CFF;" height="5.25" width="3.33" y="341.84" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #00BA38;" height="5.25" width="9.47" y="347.09" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #F8766D;" height="5.25" width="9.29" y="352.33" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #619CFF;" height="5.25" width="4.60" y="324.36" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #00BA38;" height="5.25" width="8.55" y="329.60" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #F8766D;" height="5.25" width="9.16" y="334.85" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #619CFF;" height="5.25" width="4.31" y="306.87" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #00BA38;" height="5.25" width="6.82" y="312.12" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #F8766D;" height="5.25" width="11.25" y="317.36" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #619CFF;" height="5.25" width="14.16" y="289.38" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #00BA38;" height="5.25" width="4.92" y="294.63" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #F8766D;" height="5.25" width="4.65" y="299.88" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #619CFF;" height="5.25" width="2.40" y="271.90" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #00BA38;" height="5.25" width="13.49" y="277.14" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #F8766D;" height="5.25" width="9.14" y="282.39" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #619CFF;" height="5.25" width="9.18" y="254.41" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #00BA38;" height="5.25" width="10.74" y="259.66" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #F8766D;" height="5.25" width="9.93" y="264.90" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #619CFF;" height="5.25" width="6.73" y="236.93" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #00BA38;" height="5.25" width="12.47" y="242.17" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #F8766D;" height="5.25" width="13.73" y="247.42" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #619CFF;" height="5.25" width="2.02" y="219.44" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #00BA38;" height="5.25" width="18.64" y="224.69" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #F8766D;" height="5.25" width="20.12" y="229.93" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #619CFF;" height="5.25" width="8.89" y="201.95" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #00BA38;" height="5.25" width="28.10" y="207.20" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #F8766D;" height="5.25" width="3.80" y="212.44" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #619CFF;" height="5.25" width="9.53" y="184.47" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #00BA38;" height="5.25" width="17.54" y="189.71" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #F8766D;" height="5.25" width="16.91" y="194.96" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #619CFF;" height="5.25" width="11.82" y="166.98" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #00BA38;" height="5.25" width="20.06" y="172.23" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #F8766D;" height="5.25" width="24.20" y="177.47" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #619CFF;" height="5.25" width="10.60" y="149.49" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #00BA38;" height="5.25" width="21.16" y="154.74" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #F8766D;" height="5.25" width="26.14" y="159.99" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #619CFF;" height="5.25" width="11.18" y="132.01" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #00BA38;" height="5.25" width="42.22" y="137.25" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #F8766D;" height="5.25" width="26.80" y="142.50" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #619CFF;" height="5.25" width="11.40" y="114.52" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #00BA38;" height="5.25" width="36.22" y="119.77" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #F8766D;" height="5.25" width="37.95" y="125.01" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #619CFF;" height="5.25" width="17.57" y="97.04" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #00BA38;" height="5.25" width="33.64" y="102.28" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #F8766D;" height="5.25" width="35.23" y="107.53" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #619CFF;" height="5.25" width="3.04" y="79.55" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #00BA38;" height="5.25" width="50.07" y="84.80" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #F8766D;" height="5.25" width="38.18" y="90.04" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #619CFF;" height="5.25" width="34.03" y="62.06" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #00BA38;" height="5.25" width="68.50" y="67.31" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #F8766D;" height="5.25" width="63.60" y="72.55" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #619CFF;" height="5.25" width="41.99" y="44.58" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #00BA38;" height="5.25" width="107.69" y="49.82" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #F8766D;" height="5.25" width="109.68" y="55.07" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #619CFF;" height="5.25" width="27.10" y="27.09" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #00BA38;" height="5.25" width="152.30" y="32.34" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: none; stroke-linecap: butt; fill: #F8766D;" height="5.25" width="195.26" y="37.58" x="371.59"></rect>
+<rect clip-path="url(#68e7a150-c08b-4fae-ad06-ea0b89bd5b3b)" style="stroke-width: 1.07; stroke: #F0F0F0;" height="807.86" width="214.79" y="24.47" x="361.83"></rect>
+<defs>
+<clippath id="9e1961a8-f509-41ac-8b05-247301d7817e">
+<rect height="864.00" width="648.00" y="0.00" x="0.00"></rect>
+</clippath>
+</defs>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #737373; font-family: Arial;" y="825.05" x="237.45">
+Trasferimenti correnti a Stato
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #737373; font-family: Arial;" y="807.56" x="202.68">
+Trasferimenti in conto capitale ad altri
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #737373; font-family: Arial;" y="790.08" x="140.41">
+Straordinario al personale per consultazioni elettorali
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #737373; font-family: Arial;" y="772.59" x="328.23">
+Terreni
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #737373; font-family: Arial;" y="755.10" x="163.76">
+Anticipazione di fondi per il servizio economato
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #737373; font-family: Arial;" y="737.62" x="326.14">
+Noleggi
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #737373; font-family: Arial;" y="720.13" x="161.72">
+Trasferimenti correnti a istituzioni sociali private
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #737373; font-family: Arial;" y="702.64" x="122.27">
+Beni di valore culturale, storico, archeologico, ed artistico
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #737373; font-family: Arial;" y="685.16" x="189.24">
+INCARICHI PROFESSIONALI ESTERNI
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #737373; font-family: Arial;" y="667.67" x="148.20">
+Utenze e canoni per telefonia e reti di trasmissione
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #737373; font-family: Arial;" y="650.19" x="203.70">
+Buoni pasto e mensa per il personale
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #737373; font-family: Arial;" y="632.70" x="68.30">
+Competenze fisse ed accessorie per il personale a tempo determinato
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #737373; font-family: Arial;" y="615.21" x="253.53">
+Altri materiali di consumo
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #737373; font-family: Arial;" y="597.73" x="159.09">
+Vie di comunicazione ed infrastrutture connesse
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #737373; font-family: Arial;" y="580.24" x="292.95">
+Impianti sportivi
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #737373; font-family: Arial;" y="562.75" x="187.65">
+Contratti di servizio per riscossione tributi
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #737373; font-family: Arial;" y="545.27" x="221.36">
+Servizi ausiliari e spese di pulizia
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #737373; font-family: Arial;" y="527.78" x="31.54">
+ALTRI PAGAMENTI DA REGOLARIZZARE (pagamenti codificati dal tesoriere)
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #737373; font-family: Arial;" y="510.30" x="182.95">
+Organizzazione manifestazioni e convegni
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #737373; font-family: Arial;" y="492.81" x="236.92">
+Acquisto di derrate alimentari
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #737373; font-family: Arial;" y="475.32" x="227.08">
+Trasferimenti correnti a famiglie
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #737373; font-family: Arial;" y="457.84" x="179.84">
+Altre ritenute al personale per conto di terzi
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #737373; font-family: Arial;" y="440.35" x="140.42">
+Rimborso mutui e prestiti ad enti del settore pubblico
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #737373; font-family: Arial;" y="422.86" x="283.62">
+Altre infrastrutture
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #737373; font-family: Arial;" y="405.38" x="142.76">
+Spese per gli organi istituzionali dell'ente - Indennità
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #737373; font-family: Arial;" y="387.89" x="160.14">
+Manutenzione ordinaria e riparazioni di immobili
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #737373; font-family: Arial;" y="370.41" x="169.47">
+Altri oneri  straordinari della gestione corrente
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #737373; font-family: Arial;" y="352.92" x="111.39">
+Fabbricati civili ad uso abitativo, commerciale e istituzionale
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #737373; font-family: Arial;" y="335.43" x="336.01">
+IRAP
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #737373; font-family: Arial;" y="317.95" x="22.63">
+Altre competenze ed indennità accessorie per il personale a tempo indeterminato
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #737373; font-family: Arial;" y="300.46" x="284.66">
+Altri beni immobili
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #737373; font-family: Arial;" y="282.97" x="239.01">
+Trasferimenti correnti ad altri
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #737373; font-family: Arial;" y="265.49" x="302.81">
+Assicurazioni
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #737373; font-family: Arial;" y="248.00" x="154.42">
+Ritenute previdenziali e assistenziali al personale
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #737373; font-family: Arial;" y="230.52" x="205.25">
+Utenze e canoni per energia elettrica
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #737373; font-family: Arial;" y="213.03" x="194.39">
+Altre spese per servizi per conto di terzi
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #737373; font-family: Arial;" y="195.54" x="231.75">
+Rimborso di BOC/BOP in euro
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #737373; font-family: Arial;" y="178.06" x="292.43">
+Ritenute erariali
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #737373; font-family: Arial;" y="160.57" x="126.97">
+Trasferimenti correnti ad altre imprese di pubblici servizi
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #737373; font-family: Arial;" y="143.09" x="261.84">
+Altri contratti di servizio
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #737373; font-family: Arial;" y="125.60" x="95.82">
+ Interessi passivi a Cassa depositi e prestiti - gestione CDP spa
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #737373; font-family: Arial;" y="108.11" x="205.78">
+Contributi obbligatori per il personale
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #737373; font-family: Arial;" y="90.63" x="265.98">
+Altre spese per servizi
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #737373; font-family: Arial;" y="73.14" x="208.90">
+Opere per la sistemazione del suolo
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #737373; font-family: Arial;" y="55.65" x="121.22">
+Competenze fisse per il personale a tempo indeterminato
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #737373; font-family: Arial;" y="38.17" x="187.14">
+Contratti di servizio per smaltimento rifiuti
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #737373; font-family: Arial;" y="842.78" x="368.99">
+0
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #737373; font-family: Arial;" y="842.78" x="397.40">
+1,000,000,000
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #737373; font-family: Arial;" y="842.78" x="453.05">
+2,000,000,000
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #737373; font-family: Arial;" y="842.78" x="508.71">
+3,000,000,000
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 8.00pt; fill: #525252; font-family: Arial;" transform="translate(19.05,439.67) rotate(-90)">
+desc
+</text>
+</g>
+<rect clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)" style="stroke-width: 1.07; stroke: none; fill: #F0F0F0;" height="64.66" width="48.71" y="396.07" x="585.12"></rect>
+<rect clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)" style="stroke-width: 1.07; stroke: #F0F0F0; fill: #F0F0F0;" height="17.28" width="17.28" y="404.64" x="589.37"></rect>
+<rect clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)" style="stroke-width: 1.07; stroke: none; stroke-linejoin: miter; fill: #F8766D;" height="15.86" width="15.86" y="405.35" x="590.08"></rect>
+<rect clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)" style="stroke-width: 1.07; stroke: #F0F0F0; fill: #F0F0F0;" height="17.28" width="17.28" y="421.92" x="589.37"></rect>
+<rect clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)" style="stroke-width: 1.07; stroke: none; stroke-linejoin: miter; fill: #00BA38;" height="15.86" width="15.86" y="422.63" x="590.08"></rect>
+<rect clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)" style="stroke-width: 1.07; stroke: #F0F0F0; fill: #F0F0F0;" height="17.28" width="17.28" y="439.20" x="589.37"></rect>
+<rect clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)" style="stroke-width: 1.07; stroke: none; stroke-linejoin: miter; fill: #619CFF;" height="15.86" width="15.86" y="439.91" x="590.08"></rect>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #525252; font-family: Arial;" y="416.49" x="608.81">
+2014
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #525252; font-family: Arial;" y="433.77" x="608.81">
+2015
+</text>
+</g>
+<g clip-path="url(#9e1961a8-f509-41ac-8b05-247301d7817e)">
+<text style="font-size: 7.00pt; fill: #525252; font-family: Arial;" y="451.05" x="608.81">
+2016
+</text>
+</g>
+</svg>
+</span></pre></div>
+        <div class="segment-footer"></div>
+    </div>
+</div>
+
+    <div data-bind="template: {name: renderTemplate}">
+    <div class="segment code selected" data-bind="css: {selected: active(), running: runningIndicator}, attr: {id: id}" id="9ce921c5-8483-4d03-ab1c-755339655082">
+
+        <div class="segment-main">
+            <textarea class="codeTextArea mousetrap" data-bind="codemirror: content" style="display: none;"></textarea><div class="CodeMirror cm-s-default CodeMirror-wrap                                            CodeMirror-focused"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 4px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; padding: 0px; width: 1000px; height: 1em; outline: none;" tabindex="0"></textarea></div><div class="CodeMirror-hscrollbar" style="left: 0px;"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-vscrollbar"><div style="min-width: 1px; height: 0px;"></div></div><div class="CodeMirror-scrollbar-filler"></div><div class="CodeMirror-gutter-filler"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; min-height: 21px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines"><div style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors" style=""><div class="CodeMirror-cursor" style="left: 4px; top: 0px; height: 13px;">&nbsp;</div></div><div class="CodeMirror-code"><pre><span style="padding-right: 0.1px;"> </span></pre></div></div></div></div></div><div style="position: absolute; height: 30px; width: 1px; top: 21px;"></div><div class="CodeMirror-gutters" style="display: none; height: 21px;"></div></div></div>
+        </div>
+        <div class="error-text" data-bind="text: errorText, visible: errorText() !== &#39;&#39;" style="display: none;"></div>
+        <!-- ko if: stackTrace() !== null --><!-- /ko -->
+        <div class="console-text" data-bind="visible: consoleText() !== &#39;&#39;" style="display: none;">
+            <pre><code data-bind="html: consoleText"></code></pre>
+        </div>
+        <div class="output" data-bind="visible: (output() != &#39;&#39;), outputViewer: output, segmentID: id" style="display: none;"></div>
+        <div class="segment-footer"></div>
+    </div>
+</div>
+</div>
+        </div>
+    </div>
+</div>
+<div class="scroll-pad"></div>
+
+<!-- Templates -->
+
+<script type="text/html" id="palette-template">
+    <div class="modal-overlay" data-bind="visible: shown, click: handleOverlayClick"></div>
+    <div class="modal" data-bind="visible: shown">
+        <h3 data-bind="text: caption"></h3>
+        <div class="modal-content">
+            <input type="text"
+                   data-bind="hasFocus: focused, value: filterText, valueUpdate: 'input', event: {keydown: handleKeyPress}"/>
+            <div class="palette-items">
+                <ul data-bind="foreach: items">
+                    <li data-bind="click: $parent.handleItemClick, attr: {id: ('palette-item-' + $index())}">
+                        <div class="palette-item"
+                             data-bind="html: desc, css: {highlight: ($index() == $parent.highlight())}">
+                        </div>
+                        <!--<div class="command-shortcut" data-bind="text: kb"></div>-->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/html" id="save-template">
+    <div class="modal-overlay" data-bind="visible: shown, click: handleOverlayClick"></div>
+    <div class="modal" data-bind="visible: shown">
+        <h3>Filename (relative to project directory):</h3>
+        <div class="modal-content">
+            <input type="text" data-bind="hasFocus: focused, value: filename, valueUpdate: 'input', event: {keydown: handleKeyPress}"/>
+        <div><div class="modal-button" data-bind="click: handleCancelClick">Cancel</div>
+            <div class="modal-button highlight" data-bind="click: handleOKClick">OK</div>
+        </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/html" id="code-dialog-template">
+    <div class="modal-overlay" data-bind="visible: shown, click: handleOverlayClick"></div>
+    <div class="modal" data-bind="visible: shown">
+        <h3 data-bind="text: caption"></h3>
+        <div class="modal-content">
+            <div class="message" data-bind="html: message"></div>
+            <div class='last-chance'>
+            <textarea class="last-chance"
+                      data-bind="hasFocus: focused, value: contents, event: {keydown: handleKeyPress}"></textarea>
+            </div>
+            <div>
+                <div class="modal-button highlight" data-bind="text: okButtonText, click: handleOKClick"></div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/html" id="doc-template">
+    <div class="doc-viewer" data-bind="visible: shown">
+        <div class="doc-viewer-content">
+            <div data-bind="html: doc"></div>
+        </div>
+    </div>
+</script>
+
+<script type="text/html" id="segment-template">
+    <div data-bind="template: {name: renderTemplate}"></div>
+</script>
+
+<script type="text/html" id="stacktrace-template">
+    <div class="exception"><span class="exception-header" data-bind="text: heading"></span>
+        <span data-bind="text: value.class"></span> (<span data-bind="text: value.message"></span>)</div>
+    <ul data-bind="foreach: value.stacktrace">
+        <li data-bind="css: {'java-stackframe': type === 'java', 'clj-stackframe': type === 'clj', 'tooling-stackframe': flags.indexOf('tooling') >= 0}">
+            <!-- ko if: type === "clj" -->
+            <span data-bind="text: fn"></span>
+            - <span data-bind="text: ns" class="stackframe-ns"></span>
+            - <span data-bind="text: '(' + file + ':' + line + ')'" class="stackframe-fileloc"></span>
+            <!-- /ko -->
+            <!-- ko if: type === "java" -->
+            <span data-bind="text: method"></span>
+            - <span data-bind="text: '(' + file + ':' + line + ')'" class="stackframe-fileloc"></span>
+            <!-- /ko -->
+        </li>
+    </ul>
+</script>
+
+<script type="text/html" id="code-segment-template">
+    <div class="segment code running"
+         data-bind="css: {selected: active(), running: runningIndicator}, attr: {id: id}">
+
+        <div class="segment-main">
+            <textarea class="codeTextArea mousetrap" data-bind="codemirror: content"></textarea>
+        </div>
+        <div class="error-text" data-bind="text: errorText, visible: errorText() !== ''"></div>
+        <!-- ko if: stackTrace() !== null -->
+        <div class="stack-trace" data-bind="with: stackTrace">
+            <!-- ko if: cause !== null -->
+            <div data-bind="template: {name: 'stacktrace-template', data: {value: cause, heading: 'An exception was caused by: '}}"></div>
+            <!-- /ko -->
+            <div data-bind="template: {name: 'stacktrace-template', data: {value: exception, heading: 'Exception thrown: '}}"></div>
+        </div>
+        <!-- /ko -->
+        <div class="console-text" data-bind="visible: consoleText() !== ''">
+            <pre><code data-bind="html: consoleText"></code></pre>
+        </div>
+        <div class="output"
+             data-bind="visible: (output() != ''), outputViewer: output, segmentID: id">
+            </div>
+        <div class="segment-footer"></div>
+    </div>
+</script>
+
+<script type="text/html" id="free-segment-template">
+    <div class="segment free" data-bind="css: {selected: active()}, attr: {id: id}, click: handleClick">
+        <div class="segment-main">
+            <div class="free-preview" data-bind="mathJaxViewer: renderedContent, visible: !markupVisible()"></div>
+            <div class="free-markup" data-bind="visible: markupVisible">
+                <textarea data-bind="codemirror: content"></textarea>
+            </div>
+        </div>
+        <div class="segment-footer"></div>
+    </div>
+</script>
+
+
+
+</body></html>
