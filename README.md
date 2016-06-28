@@ -87,16 +87,31 @@ linguaggio ;^)
         [huri core plot etl]
         ))
 
-(table-view (cerca-enti "PESCARA")
-            :columns [:codice 'creazione 'scadenza "???"
-			          :nome "??" "??" 'popolazione :tipo])
+;; visualizza la tavola degli enti contenenti la stringa "pescara"
+(visualizza-tavola (cerca-enti "PESCARA"))
+;; da qui e' possibile ricavare il codice ente
 
-(def dati (raccogli-dati "PRO" "000016324" "Pescara"))
+;; qui contatta soldipubblici.gov.it per raccogliere i dati desiderati
+(def dati (raccogli-dati "PRO" "000016324" "Comune di Pescara"))
+;; con un po' piu' di codice e' anche possibile aggregare piu' dati assieme
 
+;; qui analizziamo i dati convertendo i valori numerici
+;; questo passo e' necessario per utilizzare i dati raccolti in grafici e quant'altro
+(def rilievo (analizza-dati dati))
+
+;; qui usiamo due nuove funzioni:
+;; (ordina-analisi condizione dati) usa `condizione` per ordinare ed escludere in base ad un campo
+;;                                  aggiunge anche una stringa piu' leggibile agli importi
+;; (visualizza-tavola rilievo) semplicemente formatta la tavola in modo da renderla piu' leggibile
+(let [interessante   (ordina-analisi {:2015 [> 100000]} rilievo)]
+       (visualizza-tavola interessante))
+;; qui vogliamo la lista di tutti gli importi ordinati per 2015 e maggiori di 100k
+
+;; questo stampa una bella grafichetta dei dati ricavati
 (bar-chart :desc
            [:2016 :2015 :2014] {:flip? true :height 12}
-           (where {:2016 [> 10000000]}
-                  (analizza-dati dati)))
+           (where {:2015 [> 100000]}
+                  (rest rilievo)))
 ```
 
 Il codice iniziale riportato qui sopra usa `cerca-enti` per visualizzare una lista di enti che contengono la stringa "PESCARA", poi contatta il
