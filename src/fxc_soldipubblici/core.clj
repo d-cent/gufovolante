@@ -14,7 +14,7 @@
   (:import (org.apache.commons.compress.compressors.xz XZCompressorInputStream))
   )
 
-(defn apri-xz
+(defn apri-csv-xz
   "apri un file singolo compresso con xz, restituisce io/reader"
   [filename]
   (with-open [in-file (-> filename
@@ -22,9 +22,8 @@
                           io/input-stream
                           (XZCompressorInputStream. true)
                           io/reader)]
-    (doall
-     (csv/read-csv in-file)))
-)
+    (doall (csv/read-csv in-file)))
+  )
 
 (defn analizza-dati [dati]
   (let [colonne [:2016 :2015 :2014 :siope :desc]
@@ -84,26 +83,32 @@
     df
   ))
 
-(defn cerca-enti [needle]
-  (let [anag (apri-xz "assets/ANAG_ENTI_SIOPE.D160624.H0102.csv.xz")]
+(defn cerca-enti
 
-    ;; cod_ente siope
-    ;; data_inc_siope date,
-    ;; data_esc_siope date,
-    ;; cod_fiscale character(16),
-    ;; descr_ente character varying,
-    ;; cod_comune character(3),
-    ;; cod_provincia character(3),
-    ;; num_abitanti character varying,
-    ;; sottocomparto_siope character varying,
+  ;; 1 cod_ente siope
+  ;; 2 data_inc_siope date,
+  ;; 3 data_esc_siope date,
+  ;; 4 cod_fiscale character(16),
+  ;; 5 descr_ente character varying,
+  ;; 6 cod_comune character(3),
+  ;; 7 cod_provincia character(3),
+  ;; 8 num_abitanti character varying,
+  ;; 9 sottocomparto_siope character varying,
 
-    (->> anag
+  ([needle]
+   (->> (apri-csv-xz "assets/ANAG_ENTI_SIOPE.D160624.H0102.csv.xz")
+        ;; fast grep on all lines as strings to exclude bulk non matching
         (keep #(if (string/includes? (str %) (string/upper-case needle)) %))
-        (into [["codice" "creazione" "scadenza" "cod.fiscale" "nome" "cod.comune" "cod.provincia" "popolazione" "comparto"]])
-        mappify
-        doall)
-  ))
+        (into [["codice" "creazione" "scadenza" "fiscale" "nome" "comune" "provincia" "popolazione" "comparto"]])
+        mappify ;; this takes time
+        ))
 
+  ([needle pos]
+   (->> (cerca-enti needle)
+        (keep #(if (= (pos %) needle) %))
+        ))
+
+)
 
 (defn raccogli-tutto
   "Raccoglie tutti i dati disponibili su qualsiasi ente la cui descrizione contiene la stringa"
