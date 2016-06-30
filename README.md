@@ -3,13 +3,17 @@
 Una console interattiva in Clojure che fornisce un terminale per
 l'analisi dei dati pubblicati dal Governo Italiano tramite progetto [SIOPE](https://www.siope.it) e [soldipubblici.gov.it](http://soldipubblici.gov.it).
 
-[![software by Dyne.org](https://www.dyne.org/wp-content/uploads/2015/12/software_by_dyne.png)](http://www.dyne.org)
+[![Software by Dyne.org](https://www.dyne.org/wp-content/uploads/2015/12/software_by_dyne.png)](http://www.dyne.org)
 
 ## Requisiti
+
+<img align="right" src="doc/Clojure-Logo.png">
 
 Questo applicativo e' multi-piattaforma. Il funzionamento e' solo
 assicurato se fatto girare su GNU/Linux, ma e' possibile utilizzarlo
 sia su Mac/OSX che MS/Windows.
+
+<img align="left" src="http://leiningen.org/img/leiningen.jpg">
 
 I requisiti software da istallare sono:
 
@@ -134,13 +138,13 @@ Per chiedere aiuto e conoscere altri utenti e' possibile iscriversi con la propr
 
 ## Licenza
 
-Copyright © 2016 fondazione Dyne.org, Amsterdam
+Copyright © 2016 fondazione Dyne.org
 
-Programma ideato, scritto e mantenuto da [@jaromil](https://twitter.com/jaromil)
+Programma ideato, scritto e mantenuto da Denis Roio aka [@jaromil](https://twitter.com/jaromil)
 
-Ringraziamenti in particolare a [Rich Hickey](https://twitter.com/richhickey) per Clojure, [Jony Hudson](http://j-star.org) per Gorilla e [Simon Belak](https://twitter.com/sbelak) per Huri, brillanti sviluppatori il cui lavoro non smette mai di ispirarmi e motivarmi. 
+Ringraziamenti in particolare a [Rich Hickey](https://twitter.com/richhickey) per Clojure, [Jony Hudson](http://j-star.org) per Gorilla e [Simon Belak](https://twitter.com/sbelak) per Huri.
 
-FXC-Soldipubblici non sarebbe mai esistito senza la piu' ampia ricerca su nuove tecnologie per la democrazia digitale svolta in seno al progetto [D-CENT](http://dcentproject.eu).
+FXC-Soldipubblici non sarebbe mai esistito senza la piu' ampia ricerca su nuove tecnologie per la democrazia digitale svolta in seno al progetto [D-CENT](http://dcentproject.eu), finanziato dall'Unione Europea nel programma per la ricerca e lo sviluppo tecnologico [CAPS](https://ec.europa.eu/programmes/horizon2020/en/h2020-section/collective-awareness-platforms-sustainability-and-social-innovation-caps) (piattaforme per la consapevolezza collettiva, per la sostenibilita' e per l'innovazione sociale).
 
-FXC-Soldipubblici e' distribuito secondo la Eclipse Public License (come Clojure) in versione 1.0 o (a libera discrezione) qualsiasi versione successiva della licenza.
+FXC-Soldipubblici e' software libero distribuito secondo la Eclipse Public License (come Clojure) in versione 1.0 o (a libera discrezione) qualsiasi versione successiva della licenza.
 
