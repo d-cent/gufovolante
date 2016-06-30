@@ -7,6 +7,9 @@
                  [org.clojure/data.json "0.2.6"]
                  [org.clojure/data.csv "0.1.3"]
 
+                 [org.apache.commons/commons-compress "1.12"]
+                 [org.tukaani/xz "1.5"]
+
                  [clj-http "2.2.0"]
                  [cheshire "5.5.0"]
 

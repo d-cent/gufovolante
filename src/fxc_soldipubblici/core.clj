@@ -11,7 +11,20 @@
             [clojure.contrib.humanize :refer :all]
             [huri.core :as huri]
             )
+  (:import (org.apache.commons.compress.compressors.xz XZCompressorInputStream))
   )
+
+(defn apri-xz
+  "apri un file singolo compresso con xz, restituisce io/reader"
+  [filename]
+  (with-open [in-file (-> filename
+                          io/file
+                          io/input-stream
+                          (XZCompressorInputStream. true)
+                          io/reader)]
+    (doall
+     (csv/read-csv in-file)))
+)
 
 (defn analizza-dati [dati]
   (let [colonne [:2016 :2015 :2014 :siope :desc]
@@ -48,7 +61,7 @@
                :2015 (let [v (:2015 %)] [v (leggibile v)])
                :2014 (let [v (:2014 %)] [v (leggibile v)])
                ) (sort-by (first (keys chiave))
-                          (where chiave rilievo)))
+                          (huri/where chiave rilievo)))
    )
   )
 
@@ -72,9 +85,7 @@
   ))
 
 (defn cerca-enti [needle]
-  (let [anag (with-open [in-file (io/reader "assets/ANAG_ENTI_SIOPE.D160624.H0102.csv")]
-               (doall
-                (csv/read-csv in-file)))]
+  (let [anag (apri-xz "assets/ANAG_ENTI_SIOPE.D160624.H0102.csv.xz")]
 
     ;; cod_ente siope
     ;; data_inc_siope date,
