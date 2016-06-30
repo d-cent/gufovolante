@@ -75,9 +75,20 @@
   (let [anag (with-open [in-file (io/reader "assets/ANAG_ENTI_SIOPE.D160624.H0102.csv")]
                (doall
                 (csv/read-csv in-file)))]
+
+    ;; cod_ente siope
+    ;; data_inc_siope date,
+    ;; data_esc_siope date,
+    ;; cod_fiscale character(16),
+    ;; descr_ente character varying,
+    ;; cod_comune character(3),
+    ;; cod_provincia character(3),
+    ;; num_abitanti character varying,
+    ;; sottocomparto_siope character varying,
+
     (->> anag
         (keep #(if (string/includes? (str %) (string/upper-case needle)) %))
-        (into [["codice" "creazione" "scadenza" "pos4" "nome" "pos6" "pos7" "popolazione" "tipo"]])
+        (into [["codice" "creazione" "scadenza" "cod.fiscale" "nome" "cod.comune" "cod.provincia" "popolazione" "comparto"]])
         mappify
         doall)
   ))
