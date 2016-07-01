@@ -3,8 +3,13 @@
 ;; **
 ;;; # GufoVolante
 ;;; 
+;;; ![](https://github.com/d-cent/gufovolante/raw/master/doc/gufo-volante-kokkola.png)
+;;;
 ;;; ## Terminale interattivo per analisi di dati da soldipubblici.gov.it
-;;; 
+;;;
+;;; Per eseguire i blocchi di operazioni usare `SHIFT+INVIO`, per completare il nome
+;;; delle funzioni disponibili usare `CTRL+SPAZIO`.
+;;;
 ;;; Sviluppo in fase sperimentale, per maggiori informazioni la mailinglist pubblica e'
 ;;; 
 ;;; Archivio: https://lists.dyne.org/lurker/list/soldipubblici.it.html
@@ -14,17 +19,11 @@
 ;;; Codice libero ed open source: https://github.com/d-cent/gufovolante
 ;;; 
 ;;; Questa ricerca e' legata al progetto D-CENT http://dcentproject.eu
-;;; 
-;;; 
-;;; ```
-;;;   Copyright (c) Denis Roio. All rights reserved.
-;;;   The use and distribution terms for this software are covered by the
-;;;   Eclipse Public License 1.0 (http://opensource.org/licenses/eclipse-1.0.php)
-;;;   which can be found in the file epl-v10.html at the root of this distribution.
-;;;   By using this software in any fashion, you are agreeing to be bound by
-;;;   the terms of this license.
-;;;   You must not remove this notice, or any other, from this software.
-;;; ```
+;;;  
+;;;    Copyright (c) 2016 Dyne.org, scritto da Denis Roio (@jaromil)
+;;;    GufoVolante e' software libero distribuito secondo la Eclipse
+;;;    Public License (come Clojure) in versione 1.0.
+;;;
 ;; **
 
 ;; @@
