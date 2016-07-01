@@ -14,16 +14,39 @@
   (:import (org.apache.commons.compress.compressors.xz XZCompressorInputStream))
   )
 
+;; cache dei file anagrafe aperti
+(def anagrafe (atom  {}))
+
 (defn apri-csv-xz
   "apri un file singolo compresso con xz, restituisce io/reader"
   [filename]
-  (with-open [in-file (-> filename
-                          io/file
-                          io/input-stream
-                          (XZCompressorInputStream. true)
-                          io/reader)]
-    (doall (csv/read-csv in-file)))
-  )
+  (let [chiave (keyword filename)]
+
+    (if (nil? (chiave @anagrafe))
+      ;; apri nuovo file non trovato in cache
+      (swap! anagrafe assoc chiave
+             (with-open [in-file (-> filename
+                                     io/file
+                                     io/input-stream
+                                     (XZCompressorInputStream. true)
+                                     io/reader)]
+               (doall (csv/read-csv in-file)))))
+      ;; ritorna cache
+    (chiave @anagrafe)
+    
+  ))
+
+(defn dammi-codice-uscita
+  "prende una stringa del codice uscita siope e ritorna una stringa che lo descrive"
+  [codice chiave]
+  (->> (apri-csv-xz "assets/ANAG_CODGEST_USCITE.D160624.H0102.csv.xz")
+       (keep #(if (string/includes? (str %) codice) %))
+       (into [["codice" "categoria" "descrizione" "creazione" "scadenza"]])
+       mappify
+       (keep #(if (= (:codice %) codice) %))
+       first
+       chiave
+       ))
 
 (defn analizza-dati [dati]
   (let [colonne [:2016 :2015 :2014 :siope :desc]
@@ -33,7 +56,7 @@
                                    :2014     [#(if (nil? %) 0 (quot (read-string %) 100)) :importo_2014]
                                    :siope    [read-string :codice_siope]
                                 ;; :uscita   [#(if (nil? %) 0 (/ (read-string %) 100)) :imp_uscite_att]
-                                   :desc     :descrizione_codice
+                                   :desc     [#(dammi-codice-uscita % :descrizione) :codice_siope]
                                    } dati)]
     (huri/select-cols colonne rilievo))
   )
@@ -43,7 +66,9 @@
               :columns (some keys dati))
   )
 
-(defn leggibile [num]
+(defn leggibile
+  "prende un numero e restituisce una stringa leggibile"
+  [num]
   (cond
     (nil? num) "zero"
     (< num 1) "zero"
