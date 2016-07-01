@@ -1,4 +1,4 @@
-(ns fxc-soldipubblici.core
+(ns gufovolante.core
   (:require [clj-http.client :as client]
             [clj-http.cookies :as cookies]
             [clojure.string :as string]

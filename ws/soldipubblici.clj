@@ -1,7 +1,7 @@
 ;; gorilla-repl.fileformat = 1
 
 ;; **
-;;; # FXC-Soldipubblici
+;;; # GufoVolante
 ;;; 
 ;;; ## Terminale interattivo per analisi di dati da soldipubblici.gov.it
 ;;; 
@@ -11,7 +11,7 @@
 ;;; 
 ;;; Iscrizione: https://mailinglists.dyne.org/cgi-bin/mailman/listinfo/soldipubblici
 ;;; 
-;;; Codice libero ed open source: https://github.com/dyne/fxc-soldipubblici
+;;; Codice libero ed open source: https://github.com/d-cent/gufovolante
 ;;; 
 ;;; Questa ricerca e' legata al progetto D-CENT http://dcentproject.eu
 ;;; 
@@ -29,12 +29,12 @@
 ;; **
 
 ;; @@
-(ns fxc-soldipubblici.core
+(ns gufovolante.term
   (:require
    [clojure.string :as string]
    [clojure.data.json :as json]
    [clojure.contrib.humanize :refer :all]
-   [fxc-soldipubblici.core :refer :all :reload :true])
+   [gufovolante.core :refer :all :reload :true])
   (:use [gorilla-repl core table latex html]
         [huri core plot etl]
         ))

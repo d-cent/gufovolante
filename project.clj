@@ -1,4 +1,4 @@
-(defproject fxc-soldipubblici "0.1.0-SNAPSHOT"
+(defproject gufovolante "0.1.0-SNAPSHOT"
   :description "Terminale interattivo di analisi soldipubblici.gov.it"
   :url "http://dcentproject.eu"
   :license {:name "Eclipse Public License"

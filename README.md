@@ -1,7 +1,12 @@
-# FXC-Soldipubblici
+# Gufo Volante
 
-Una console interattiva in Clojure che fornisce un terminale per
-l'analisi dei dati pubblicati dal Governo Italiano tramite progetto [SIOPE](https://www.siope.it) e [soldipubblici.gov.it](http://soldipubblici.gov.it).
+![Il logo di questo software e' un gufo volante](doc/gufo-volante-kokkola.png)
+
+Una console interattiva inspirata alla pratica del
+[live coding](https://en.wikipedia.org/wiki/Live_coding) 
+e che fornisce un terminale per l'analisi dei dati pubblicati dal
+Governo Italiano tramite progetto [SIOPE](https://www.siope.it) e
+[soldipubblici.gov.it](http://soldipubblici.gov.it).
 
 [![Software by Dyne.org](https://www.dyne.org/wp-content/uploads/2015/12/software_by_dyne.png)](http://www.dyne.org)
 
@@ -9,9 +14,7 @@ l'analisi dei dati pubblicati dal Governo Italiano tramite progetto [SIOPE](http
 
 <img align="right" src="doc/Clojure-Logo.png">
 
-Questo applicativo e' multi-piattaforma. Il funzionamento e' solo
-assicurato se fatto girare su GNU/Linux, ma e' possibile utilizzarlo
-sia su Mac/OSX che MS/Windows.
+Questo applicativo e' multi-piattaforma e funziona sia su GNU/Linux che su Mac/OSX che MS/Windows.
 
 <img align="left" src="http://leiningen.org/img/leiningen.jpg">
 
@@ -144,7 +147,9 @@ Programma ideato, scritto e mantenuto da Denis Roio aka [@jaromil](https://twitt
 
 Ringraziamenti in particolare a [Rich Hickey](https://twitter.com/richhickey) per Clojure, [Jony Hudson](http://j-star.org) per Gorilla e [Simon Belak](https://twitter.com/sbelak) per Huri.
 
-FXC-Soldipubblici non sarebbe mai esistito senza la piu' ampia ricerca su nuove tecnologie per la democrazia digitale svolta in seno al progetto [D-CENT](http://dcentproject.eu), finanziato dall'Unione Europea nel programma per la ricerca e lo sviluppo tecnologico [CAPS](https://ec.europa.eu/programmes/horizon2020/en/h2020-section/collective-awareness-platforms-sustainability-and-social-innovation-caps) (piattaforme per la consapevolezza collettiva, per la sostenibilita' e per l'innovazione sociale).
+GufoVolante non sarebbe mai esistito senza la piu' ampia ricerca su nuove tecnologie per la democrazia digitale svolta in seno al progetto [D-CENT](http://dcentproject.eu) (FP7/CAPS 610349), finanziato dall'Unione Europea nel programma per la ricerca e lo sviluppo tecnologico [CAPS](https://ec.europa.eu/programmes/horizon2020/en/h2020-section/collective-awareness-platforms-sustainability-and-social-innovation-caps) (piattaforme per la consapevolezza collettiva, per la sostenibilita' e per l'innovazione sociale).
 
-FXC-Soldipubblici e' software libero distribuito secondo la Eclipse Public License (come Clojure) in versione 1.0 o (a libera discrezione) qualsiasi versione successiva della licenza.
+GufoVolante e' software libero distribuito secondo la Eclipse Public License (come Clojure) in versione 1.0 o (a libera discrezione) qualsiasi versione successiva della licenza.
+
+Il logo del gufo volante e' tratto da una foto scattata da Jani Yikangas nel paesino di Kokkola, in Finlandia.
 
