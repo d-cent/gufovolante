@@ -15,7 +15,6 @@
 ;;; 
 ;;; Questa ricerca e' legata al progetto D-CENT http://dcentproject.eu
 ;;; 
-;;; FXC sta per http://freecoin.ch
 ;;; 
 ;;; ```
 ;;;   Copyright (c) Denis Roio. All rights reserved.

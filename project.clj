@@ -10,12 +10,12 @@
                  [org.apache.commons/commons-compress "1.12"]
                  [org.tukaani/xz "1.5"]
 
-                 [clj-http "2.2.0"]
-                 [cheshire "5.5.0"]
+                 [clj-http "3.1.0"]
+                 [cheshire "5.6.3"]
 
                  [clojure-humanize "0.2.0"]
 
-                 [clojure-csv/clojure-csv "2.0.1"]
+                 [clojure-csv/clojure-csv "2.0.2"]
                  [semantic-csv "0.1.0"]
 
                  [gorilla-repl "0.3.6"]

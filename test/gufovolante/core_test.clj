@@ -1,4 +1,4 @@
-(ns fxc-soldipubblici.core-test
+(ns gufovolante.core-test
   (:require [clojure.test :refer :all]
             [gufovolante.core :refer :all]))
 
