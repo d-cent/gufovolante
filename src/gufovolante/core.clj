@@ -18,6 +18,8 @@
 ;; cache dei file anagrafe aperti
 (def anagrafe (atom {}))
 
+(def url "http://127.0.0.1:8990")
+
 (defn apri-csv-xz
   "apri un file singolo compresso con xz, restituisce io/reader"
   [filename]
@@ -31,7 +33,6 @@
       (let []
         (swap! anagrafe assoc chiave
                (with-open [in-file (-> filename
-                                       io/file
                                        io/input-stream
                                        (XZCompressorInputStream. true)
                                        io/reader)]
@@ -47,7 +48,7 @@
    (dammi-codice-uscita codice :descrizione))
 
   ([codice chiave]
-  (->> (apri-csv-xz "assets/ANAG_CODGEST_USCITE.D160624.H0102.csv.xz")
+  (->> (apri-csv-xz (str url "/siope/ANAG_CODGEST_USCITE.D160624.H0102.csv.xz"))
        (keep #(if (string/includes? (str %) codice) %))
        (into [["codice" "categoria" "descrizione" "creazione" "scadenza"]])
        mappify
@@ -129,7 +130,7 @@
   ;; 9 sottocomparto_siope character varying,
 
   ([needle]
-   (->> (apri-csv-xz "assets/ANAG_ENTI_SIOPE.D160624.H0102.csv.xz")
+   (->> (apri-csv-xz (str url "/siope/ANAG_ENTI_SIOPE.D160624.H0102.csv.xz"))
         ;; fast grep on all lines as strings to exclude bulk non matching
         (keep #(if (string/includes? (str %) (string/upper-case needle)) %))
         (into [["codice" "creazione" "scadenza" "fiscale" "nome" "comune" "provincia" "popolazione" "comparto"]])
