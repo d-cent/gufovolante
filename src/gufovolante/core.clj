@@ -12,6 +12,7 @@
             [huri.core :as huri]
             )
   (:import (org.apache.commons.compress.compressors.xz XZCompressorInputStream))
+  (:gen-class)
   )
 
 ;; cache dei file anagrafe aperti

@@ -55,7 +55,7 @@
     (let [s (server/run-server #'app-routes {:port webapp-requested-port :join? false :ip ip :max-body 500000000})
           webapp-port (:local-port (meta s))]
       (spit (doto gorilla-port-file .deleteOnExit) webapp-port)
-      (println (str "Running at http://" ip ":" webapp-port "/worksheet.html?filename=ws/soldipubblici.clj ."))
+      (println (str "Running at http://" ip ":" webapp-port "/index.html"))
       (println "Ctrl+C to exit."))))
 
 (defn -main
