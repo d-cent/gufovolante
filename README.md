@@ -31,39 +31,23 @@ install.packages("RColorBrewer")
 install.packages("ggrepel")
 install.packages("svglite")
 ```
- 
-## Utilizzo (attenti al Gorilla!)
+
+## Utilizzo da sorgente (attenti al Gorilla!)
 
 Una volta istallato tutto aprire un terminale nella cartella di
-gufovolante e lanciare il comando: `lein gorilla`. Dopo un po'
+gufovolante e lanciare il comando: `lein run`. Dopo un po'
 il comando restituira' informazioni su un indirizzo web in
 locale, per esempio:
 
 ```
 Gorilla-REPL: 0.3.6
 Started nREPL server on port 49187
-Running at http://127.0.0.1:39426/worksheet.html .
+Running at http://127.0.0.1:8990/index.html .
 Ctrl+C to exit.
 ```
 
-A questo punto si deve copiare l'indirizzo
-`http://127.0.0.1:39426/worksheet.html` (notare: la porta cambia ogni
-volta) ed aprirlo con il browser.
-
-Una volta fatto cio' ci si trovera' in questa schermata.
-
-![](doc/gorilla-screen.png)
-
-A questo punto premendo il pulsante per menu in alto a destra o usando
-la combo `alt+g alt+l` occorre caricare il "worksheet" di
-soldipubblici
-
-![](doc/load-worksheet.png)
-
-che apparira' tra i files come selezione:
-`ws/soldipubblici.clj`
-
-![](doc/select-worksheet.png)
+A questo punto si deve aprire l'indirizzo con un browser:
+`http://127.0.0.1:8990/index.html` (notare: index.html incluso)
 
 A questo punto ci si trova nel terminale interattivo per "livecoding"
 cioe' per sperimentare in tempo reale con codice e dati e
@@ -71,7 +55,6 @@ visualizzazione. Un messaggio di benvenuto fornisce un po' di link che
 pero' sono solo clickabili con tasto destro
 
 ![](doc/fxc-welcome.png)
-
 
 Il linguaggio usato e' Clojure che e' un dialetto del
 LISP molto efficiente che offre anche varie estensioni per facilitare
