@@ -3,7 +3,7 @@
 ;; **
 ;;; # GufoVolante
 ;;; 
-;;; ![](https://github.com/d-cent/gufovolante/raw/master/doc/gufo-volante-kokkola.png)
+;;; ![](https://raw.githubusercontent.com/d-cent/gufovolante/master/resources/gufo/gufo-volante-kokkola.png)
 ;;;
 ;;; ## Terminale interattivo per analisi di dati da soldipubblici.gov.it
 ;;;
@@ -20,9 +20,9 @@
 ;;; 
 ;;; Questa ricerca e' legata al progetto D-CENT http://dcentproject.eu
 ;;;  
-;;;    Copyright (c) 2016 Dyne.org, scritto da Denis Roio (@jaromil)
-;;;    GufoVolante e' software libero distribuito secondo la Eclipse
-;;;    Public License (come Clojure) in versione 1.0.
+;;;     Copyright (c) 2016 Dyne.org, scritto da Denis Roio (@jaromil)
+;;;     GufoVolante e' software libero distribuito secondo la Eclipse
+;;;     Public License (come Clojure) in versione 1.0.
 ;;;
 ;; **
 

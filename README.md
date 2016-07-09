@@ -62,6 +62,10 @@ la manipolazione di larghe basi dati. E' molto potente anche se ancora
 poco conosciuto, in Dyne.org riusciamo a fare grandi cose con questo
 linguaggio ;^)
 
+Qui e' visibile un esempio completo di uso per visualizzare ![i capitoli di spesa piu' alti per l'ente della provincia di Pescara](http://viewer.gorilla-repl.org/view.html?source=github&user=d-cent&repo=gufovolante&path=ws/soldipubblici.clj)
+
+Di seguito un esempio di codice commentato piu' breve:
+
 ```clojure
 (ns gufovolante.term
   (:require
